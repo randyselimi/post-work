@@ -1,3 +1,8 @@
+<script>
+	import PostWorkModal from '$lib/post-work-modal.svelte';
+	import UpdateHoursModal from '$lib/update-hours-modal.svelte';
+</script>
+
 <div class="container">
 	<div class="header">
 		<div class="header-element">
@@ -14,8 +19,8 @@
 		</div>
 	</div>
 	<div class="subheader">
-		<button> Post Work </button>
-		<button> Update Hours </button>
+		<PostWorkModal />
+		<UpdateHoursModal />
 	</div>
 	<slot />
 </div>
