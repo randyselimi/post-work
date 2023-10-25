@@ -2,11 +2,8 @@
 	import Modal from './modal.svelte';
 
 	export let user: string;
-
-	let showModal = false;
+	export let showModal = false;
 </script>
-
-<p on:click={() => (showModal = true)}>{user}</p>
 
 <Modal bind:showModal>
 	<div slot="header">
