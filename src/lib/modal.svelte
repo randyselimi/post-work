@@ -27,10 +27,10 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
+		width: 35em;
 	}
 	dialog {
-		max-width: 32em;
 		border-radius: 0.2em;
 		border: none;
 		padding: 0;
