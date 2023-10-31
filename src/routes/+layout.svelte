@@ -1,7 +1,7 @@
 <script>
 	import './styles.css';
-	import PostWorkModal from '$lib/post-work-modal.svelte';
-	import UpdateHoursModal from '$lib/update-hours-modal.svelte';
+	import PostWorkModal from '$lib/modals/post-work-modal.svelte';
+	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 </script>
 
 <div class="container">

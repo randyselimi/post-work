@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Card from './card.svelte';
-	import WorkLargeSegment from './work-large-segment.svelte';
-	import UserSmallSegment from './user-small-segment.svelte';
+	import WorkLargeSegment from '../segments/work-large-segment.svelte';
+	import UserSmallSegment from '../segments/user-small-segment.svelte';
 
 	export let work: any;
 	export let user: any;
@@ -10,8 +10,9 @@
 <Card>
 	<WorkLargeSegment {work} slot="header" />
 	<UserSmallSegment {user} slot="content" />
+
 	<div slot="footer">
-		<button>Accept</button>
+		<button>Complete</button>
 	</div>
 </Card>
 

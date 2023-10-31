@@ -1,5 +1,5 @@
 <script lang="ts">
-	import WorkModal from './work-modal.svelte';
+	import WorkModal from '../modals/work-modal.svelte';
 
 	export let work: any;
 	let showModal = false;
@@ -7,11 +7,7 @@
 
 <div on:click={() => (showModal = true)} class="container">
 	<h4>{work.title}</h4>
-	<div>
-		<p>Hours: {work.hours}</p>
-		<p>Skills: {work.skills}</p>
-		<p>Due: {work.due}</p>
-	</div>
+	<p>Hours: {work.hours} Due: {work.due}</p>
 </div>
 
 <WorkModal {work} {showModal} />

@@ -1,15 +1,18 @@
 <script lang="ts">
 	import Card from './card.svelte';
-	import WorkLargeSegment from './work-large-segment.svelte';
+	import UserLargeSegment from '../segments/user-large-segment.svelte';
+	import WorkSmallSegment from '../segments/work-small-segment.svelte';
 
+	export let user: any;
 	export let work: any;
 </script>
 
 <Card>
-	<WorkLargeSegment {work} slot="header" />
+	<UserLargeSegment {user} slot="header" />
+	<WorkSmallSegment {work} slot="content" />
 
 	<div slot="footer">
-		<button>Pending</button>
+		<button>Sign Off</button>
 	</div>
 </Card>
 

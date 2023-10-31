@@ -1,5 +1,5 @@
 <script lang="ts">
-	import UserModal from './user-modal.svelte';
+	import UserModal from '../modals/user-modal.svelte';
 
 	export let user: any;
 	let showModal = false;
