@@ -1,14 +1,14 @@
 <script>
 </script>
 
-<div class="container">
+<div class="card">
 	<slot name="header" />
 	<slot name="content" />
 	<slot name="footer" />
 </div>
 
 <style>
-	.container {
+	.card {
 		background-color: #ffffff;
 		display: flex;
 		flex-direction: column;

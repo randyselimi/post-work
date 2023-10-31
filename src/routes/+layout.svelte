@@ -1,7 +1,5 @@
 <script>
 	import './styles.css';
-	import PostWorkModal from '$lib/modals/post-work-modal.svelte';
-	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 </script>
 
 <div class="container">
@@ -10,7 +8,7 @@
 			<h1>Post Work</h1>
 		</div>
 		<div class="row">
-			<a class="home-button" href="/">Home</a>
+			<a class="button" href="/">Home</a>
 			<a class="button" href="/post-work">Post Work</a>
 			<a class="button" href="/get-work">Get Work</a>
 			<a class="button" href="/network">Network</a>
@@ -31,6 +29,10 @@
 		display: flex;
 	}
 	.header {
+		position: sticky;
+		z-index: 999;
+		top: -10px;
+		box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 25%);
 		color: black;
 		background-color: white;
 		display: flex;
@@ -40,50 +42,40 @@
 	.header-element {
 		width: 10em;
 	}
-	.home-button {
-		font-weight: bold;
-		border-width: 2px 2px 0px 2px;
-		background-color: #ebebeb;
-		border-color: white;
-		border-style: solid;
-		text-decoration: none;
-		border-radius: 4px 4px 0px 0px;
-		border: 0px;
-		color: #313131;
-		cursor: pointer;
-		font-family: arial, sans-serif;
-		font-size: 14px;
-		height: 36px;
-		line-height: 27px;
-		min-width: 54px;
-		padding: 0 16px;
-		text-align: center;
-		user-select: none;
-		-webkit-user-select: none;
-		touch-action: manipulation;
-		white-space: pre;
-	}
+
+	/* CSS */
 	.button {
-		background-color: #202123;
-		text-decoration: none;
-		border-radius: 4px 4px 0px 0px;
-		border: 0px;
-		color: white;
-		cursor: pointer;
-		font-family: arial, sans-serif;
-		font-size: 14px;
-		height: 36px;
-		line-height: 27px;
-		min-width: 54px;
-		padding: 0 16px;
+		background-color: #ffffff;
+		border: 0;
+		border-radius: 5px 5px 0px 0px;
+		box-sizing: border-box;
+		color: #000000;
+		font-family: 'Inter var', ui-sans-serif, system-ui, -apple-system, system-ui, 'Segoe UI', Roboto,
+			'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+			'Segoe UI Symbol', 'Noto Color Emoji';
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.25rem;
+		padding: 0.75rem 1rem;
 		text-align: center;
+		text-decoration: none #d1d5db solid;
+		text-decoration-thickness: auto;
+		cursor: pointer;
 		user-select: none;
 		-webkit-user-select: none;
 		touch-action: manipulation;
-		white-space: pre;
 	}
 
 	.button:hover {
-		opacity: 0.75;
+		background-color: rgb(249, 250, 251);
+	}
+
+	.button:focus {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+	}
+
+	.button:focus-visible {
+		box-shadow: none;
 	}
 </style>
