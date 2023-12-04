@@ -14,7 +14,7 @@
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
-		<div class="container">
+		<div class="modal">
 			<slot name="header" />
 			<slot />
 			<slot name="content" />
@@ -24,7 +24,7 @@
 </dialog>
 
 <style>
-	.container {
+	.modal {
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
@@ -62,8 +62,5 @@
 		to {
 			opacity: 1;
 		}
-	}
-	button {
-		display: block;
 	}
 </style>
