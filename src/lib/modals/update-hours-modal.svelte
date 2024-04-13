@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Modal from './modal.svelte';
 
 	let showModal = false;

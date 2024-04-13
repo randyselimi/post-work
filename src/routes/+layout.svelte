@@ -1,5 +1,10 @@
-<script>
+<script lang="ts">
 	import './styles.css';
+	import { goto } from '$app/navigation';
+
+	function routeToPage(route: string, replaceState: boolean) {
+		goto(`/${route}`, { replaceState });
+	}
 </script>
 
 <div class="container">
