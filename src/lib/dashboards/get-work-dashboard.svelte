@@ -3,14 +3,14 @@
 	import DashboardTile from './dashboard-tile.svelte';
 	import Dashboard from './dashboard.svelte';
 	import OpportunitiesCarousel from '../carousel/opportunities-carousel.svelte';
-
+	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 	export let opportunityItems: any;
 	export let assignedToYouItems: any;
 </script>
 
 <Dashboard title="Get Work">
 	<div slot="actions">
-		<button>Update Availability</button>
+		<UpdateHoursModal />
 	</div>
 	<div slot="content">
 		<DashboardTile title="Opportunities">
