@@ -1,15 +1,9 @@
 <script lang="ts">
-	import CurrentlyPostedCard from '$lib/cards/currently-posted-card.svelte';
-	import InProgressCard from '$lib/cards/in-progress-card.svelte';
-	import OpportunityCard from '$lib/cards/opportunity-card.svelte';
-	import AssignedToYouCard from '$lib/cards/assigned-to-you-card.svelte';
 	import works from '$lib/work-mock-data.json';
 	import users from '$lib/user-mock-data.json';
-	import UserModal from '$lib/modals/user-modal.svelte';
-	import PostWorkModal from '$lib/modals/post-work-modal.svelte';
-	import GetWorkDashboard from '$lib/get-work-dashboard.svelte';
-	import PostWorkDashboard from '$lib/post-work-dashboard.svelte';
-	import NetworkDashboard from '$lib/network-dashboard.svelte';
+	import GetWorkDashboard from '$lib/dashboards/get-work-dashboard.svelte';
+	import PostWorkDashboard from '$lib/dashboards/post-work-dashboard.svelte';
+	import NetworkDashboard from '$lib/dashboards/network-dashboard.svelte';
 
 	const currentlyPostedItems = [{ work: works[0] }, { work: works[1] }, { work: works[2] }];
 	const inProgressItems = [

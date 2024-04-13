@@ -1,5 +1,5 @@
 <script>
-	import UserModal from './modals/user-modal.svelte';
+	import UserModal from '../modals/user-modal.svelte';
 </script>
 
 <div class="dashboard">

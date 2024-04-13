@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Carousel from './carousel.svelte';
-	import AssignedToYouCard from './cards/assigned-to-you-card.svelte';
+	import AssignedToYouCard from '../cards/assigned-to-you-card.svelte';
 	export let assignedToYouItems: any;
 </script>
 

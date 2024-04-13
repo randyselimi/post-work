@@ -25,6 +25,7 @@
 		display: flex;
 		flex-direction: column;
 	}
+
 	.row {
 		display: flex;
 	}
@@ -43,7 +44,6 @@
 		width: 10em;
 	}
 
-	/* CSS */
 	.button {
 		background-color: #ffffff;
 		border: 0;

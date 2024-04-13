@@ -1,8 +1,8 @@
 <script lang="ts">
-	import AssignedToYouCarousel from './assigned-to-you-carousel.svelte';
+	import AssignedToYouCarousel from '../carousel/assigned-to-you-carousel.svelte';
 	import DashboardTile from './dashboard-tile.svelte';
 	import Dashboard from './dashboard.svelte';
-	import OpportunitiesCarousel from './opportunities-carousel.svelte';
+	import OpportunitiesCarousel from '../carousel/opportunities-carousel.svelte';
 
 	export let opportunityItems: any;
 	export let assignedToYouItems: any;

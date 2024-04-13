@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Carousel from './carousel.svelte';
-	import CurrentlyPostedCard from './cards/currently-posted-card.svelte';
+	import CurrentlyPostedCard from '../cards/currently-posted-card.svelte';
 	export let currentlyPostedItems: any;
 </script>
 
