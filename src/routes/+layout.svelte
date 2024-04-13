@@ -1,10 +1,35 @@
 <script lang="ts">
 	import './styles.css';
+	import { loggedIn } from '$lib/stores';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 
-	function routeToPage(route: string, replaceState: boolean) {
+	let isLoggedIn = false;
+
+	function routeToLogin(route: string, replaceState: boolean) {
 		goto(`/${route}`, { replaceState });
 	}
+	function checkLogin() {
+		if (browser) {
+			if (!isLoggedIn) {
+				routeToLogin('login', true);
+			} else {
+				routeToLogin('', true);
+			}
+		}
+	}
+	loggedIn.subscribe((value) => {
+		console.log(value);
+		isLoggedIn = value;
+		checkLogin();
+	});
+
+	onMount(() => {
+		if (!isLoggedIn) {
+			routeToLogin('login', true);
+		}
+	});
 </script>
 
 <div class="container">
@@ -19,7 +44,7 @@
 			<a class="button" href="/network">Network</a>
 		</div>
 		<div class="header-element">
-			<a class="button" href="/profile">Randy Selimi</a>
+			<a class="button" on:click={() => loggedIn.set(false)}>Randy Selimi</a>
 		</div>
 	</div>
 	<slot />
