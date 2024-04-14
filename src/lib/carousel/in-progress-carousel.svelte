@@ -6,6 +6,6 @@
 
 <Carousel>
 	{#each inProgressItems as item}
-		<InProgressCard user={item.user} work={item.work} />
+		<InProgressCard user={item.assignedTo} work={item} />
 	{/each}
 </Carousel>

@@ -1,26 +1,24 @@
 <script lang="ts">
-	import works from '$lib/work-mock-data.json';
-	import users from '$lib/user-mock-data.json';
+	import type { User } from '$lib/User';
+	import type { Task } from '$lib/Task';
+	import type { Team } from '$lib/Team.js';
 	import GetWorkDashboard from '$lib/dashboards/get-work-dashboard.svelte';
 	import PostWorkDashboard from '$lib/dashboards/post-work-dashboard.svelte';
 	import NetworkDashboard from '$lib/dashboards/network-dashboard.svelte';
 
-	const currentlyPostedItems = [{ work: works[0] }, { work: works[1] }, { work: works[2] }];
-	const inProgressItems = [
-		{ work: works[3], user: users[0] },
-		{ work: works[4], user: users[1] },
-		{ work: works[5], user: users[2] }
-	];
-	const opportunityItems = [
-		{ work: works[6], user: users[3] },
-		{ work: works[7], user: users[4] },
-		{ work: works[8], user: users[5] }
-	];
-	const assignedToYouItems = [
-		{ work: works[9], user: users[6] },
-		{ work: works[1], user: users[7] },
-		{ work: works[2], user: users[8] }
-	];
+	export let data;
+
+	const myUser: User = data.myUser;
+	const currentlyPostedItems: Task[] = myUser.workPosted.filter(
+		(task) => (task as Task).status === 'Posted'
+	) as Task[];
+	const inProgressItems: Task[] = myUser.workPosted.filter(
+		(task) => (task as Task).status === 'Assigned'
+	) as Task[];
+	const opportunityItems: Task[] = myUser.workAvailable as Task[];
+	const assignedToYouItems: Task[] = myUser.workAssigned as Task[];
+	const myTeam: Team = data.myTeam;
+	const connectedTeams: Team[] = data.connectedTeams;
 </script>
 
 <div class="container">
@@ -28,7 +26,7 @@
 		<PostWorkDashboard {currentlyPostedItems} {inProgressItems} />
 		<GetWorkDashboard {opportunityItems} {assignedToYouItems} />
 	</div>
-	<NetworkDashboard />
+	<NetworkDashboard {myTeam} {connectedTeams} />
 </div>
 
 <style>

@@ -6,6 +6,6 @@
 
 <Carousel>
 	{#each opportunityItems as item}
-		<OpportunityCard work={item.work} user={item.user} />
+		<OpportunityCard work={item} user={item.postedBy} />
 	{/each}
 </Carousel>

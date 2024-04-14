@@ -6,6 +6,6 @@
 
 <Carousel>
 	{#each currentlyPostedItems as item}
-		<CurrentlyPostedCard work={item.work} />
+		<CurrentlyPostedCard work={item} />
 	{/each}
 </Carousel>

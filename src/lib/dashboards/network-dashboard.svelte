@@ -1,57 +1,11 @@
 <script lang="ts">
+	import type { Team } from '$lib/Team';
 	import Dashboard from './dashboard.svelte';
 	import DashboardTile from './dashboard-tile.svelte';
 	import UserCarousel from '../carousel/user-carousel.svelte';
 	import TeamCarousel from '../carousel/team-carousel.svelte';
-
-	const users = [
-		{
-			id: 2,
-			firstName: 'Alexandra',
-			lastName: 'Deards',
-			fullName: 'Alexandra Deards',
-			email: 'adeards1@yolasite.com',
-			avatar: 'https://robohash.org/voluptatemimpeditnatus.png?size=50x50&set=set1'
-		},
-		{
-			id: 3,
-			firstName: 'Paulie',
-			lastName: "O'Curneen",
-			fullName: "Paulie O'Curneen",
-			email: 'pocurneen2@altervista.org',
-			avatar: 'https://robohash.org/sapientesaepeexcepturi.png?size=50x50&set=set1'
-		},
-		{
-			id: 4,
-			firstName: 'Anatol',
-			lastName: 'Clausner',
-			fullName: 'Anatol Clausner',
-			email: 'aclausner3@indiegogo.com',
-			avatar: 'https://robohash.org/etdoloremfacere.png?size=50x50&set=set1'
-		}
-	];
-	const teams = [
-		{
-			title: 'Design Team',
-			members: 12,
-			hours: 221
-		},
-		{
-			title: 'Development Team',
-			members: 10,
-			hours: 30
-		},
-		{
-			title: 'Marketing Team',
-			members: 8,
-			hours: 100
-		},
-		{
-			title: 'Sales Team',
-			members: 5,
-			hours: 50
-		}
-	];
+	export let myTeam: Team;
+	export let connectedTeams: Team[];
 </script>
 
 <Dashboard title="Network">
@@ -65,10 +19,10 @@
 			<p>Members: 5</p>
 			<p>Projects: 3</p>
 			<p>Tasks: 10</p>
-			<UserCarousel {users} />
+			<UserCarousel users={myTeam.members} />
 		</DashboardTile>
 		<DashboardTile title="Connected Teams">
-			<TeamCarousel {teams} />
+			<TeamCarousel teams={connectedTeams} />
 		</DashboardTile>
 		<DashboardTile title="Organization">
 			<h1>Please Add An Organization</h1>
