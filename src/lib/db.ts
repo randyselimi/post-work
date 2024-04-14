@@ -146,7 +146,7 @@ export function getUser(userId: number): User {
 			};
 			return task;
 		}) as Task[];
-
+	user.workAvailable = user.workAvailable.slice(0, 5);
 	user.workPosted.forEach((task) => {
 		const data: UserData = userData.find((data) => data.id === task.assignedTo)!;
 		if (data) {

@@ -36,7 +36,7 @@
 	</div>
 </div>
 
-{#if $page.state.selected && showModal}
+<!-- {#if $page.state.selected && showModal}
 	<WorkModal
 		work={$page.state.selected.task}
 		{showModal}
@@ -45,7 +45,7 @@
 			history.back();
 		}}
 	/>
-{/if}
+{/if} -->
 
 <style>
 	.container {

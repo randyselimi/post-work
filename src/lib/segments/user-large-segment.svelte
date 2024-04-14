@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { preloadData, pushState, goto } from '$app/navigation';
-	import { page } from '$app/stores';
-	import UserModal from '../modals/user-modal.svelte';
 
 	export let user: any;
-	let showModal = false;
 </script>
 
 <div
@@ -18,7 +15,6 @@
 
 		if (result.type === 'loaded' && result.status === 200) {
 			pushState('/user/' + user.id, { selected: result.data });
-			showModal = true
 		} else {
 			// something bad happened! try navigating
 			goto('/user/' + user.id);
@@ -31,12 +27,12 @@
 	<p>{user.email}</p>
 </div>
 
-{#if $page.state.selected && showModal}
+<!-- {#if $page.state.selected && showModal}
 	<UserModal user={$page.state.selected.user} {showModal} on:close={() => {
 		showModal = false;
 		history.back();
 	}} />
-{/if}
+{/if} -->
 
 <style>
 	.container {

@@ -30,12 +30,12 @@
 	<p>Hours: {work.hours} Due: {work.endDate}</p>
 </div>
 
-{#if $page.state.selected && showModal}
+<!-- {#if $page.state.selected && showModal}
 	<WorkModal work={$page.state.selected.task} {showModal} on:close={() => {
 		showModal = false;
 		history.back();
 	}} />
-{/if}
+{/if} -->
 
 <style>
 	.container {

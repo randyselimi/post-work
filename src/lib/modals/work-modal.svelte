@@ -13,7 +13,7 @@
 	<div slot="header">
 		<h2>{work.title}</h2>
 		<h3>{postedBy.fullName}</h3>
-		<h3>{assignedTo?.fullName}</h3>
+		<h3>{assignedTo?.fullName || 'Unassigned'}</h3>
 	</div>
 
 	<div slot="content">

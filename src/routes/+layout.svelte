@@ -4,9 +4,13 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import TeamModal from '$lib/modals/team-modal.svelte';
+	import WorkModal from '$lib/modals/work-modal.svelte';
+	import UserModal from '$lib/modals/user-modal.svelte';
 
 	let isLoggedIn = false;
-
+	$: showModal = $page.state.selected;
 	function routeToLogin(route: string, replaceState: boolean) {
 		goto(`/${route}`, { replaceState });
 	}
@@ -49,7 +53,33 @@
 	</div>
 	<slot />
 </div>
-
+{#if $page.state.selected}
+{#if $page.state.selected.team}
+	<TeamModal
+		team={$page.state.selected.team}
+		{showModal}
+		on:close={() => {
+			history.back();
+		}}
+	/>
+{:else if $page.state.selected.task}
+	<WorkModal
+		work={$page.state.selected.task}
+		{showModal}
+		on:close={() => {
+			history.back();
+		}}
+	/>
+{:else if $page.state.selected.user}
+	<UserModal
+		user={$page.state.selected.user}
+		{showModal}
+		on:close={() => {
+			history.back();
+		}}
+	/>
+{/if}
+{/if}
 <style>
 	.container {
 		display: flex;

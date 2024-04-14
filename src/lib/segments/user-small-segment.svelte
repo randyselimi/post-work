@@ -33,12 +33,12 @@
 	</div>
 </div>
 
-{#if $page.state.selected && showModal}
+<!-- {#if $page.state.selected && showModal}
 	<UserModal user={$page.state.selected.user} {showModal} on:close={() => {
 		showModal = false;
 		history.back();
 	}} />
-{/if}
+{/if} -->
 
 <style>
 	.container {
