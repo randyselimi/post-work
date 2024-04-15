@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { preloadData, pushState, goto } from '$app/navigation';
+	import LargeSegment from './large-segment.svelte';
 
 	export let user: any;
 </script>
 
-<div
+<LargeSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -20,24 +21,9 @@
 			goto('/user/' + user.id);
 		}
 	}}
-	class="segment"
 >
 	<h4>{user.fullName}</h4>
-	<img width="100px" height="100px" src={user.avatar} alt="avatar" />
+	<!-- <img width="100px" height="100px" src={user.avatar} alt="avatar" /> -->
 	<p>{user.email}</p>
-</div>
+</LargeSegment>
 
-<!-- {#if $page.state.selected && showModal}
-	<UserModal user={$page.state.selected.user} {showModal} on:close={() => {
-		showModal = false;
-		history.back();
-	}} />
-{/if} -->
-
-<style>
-	.segment {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>

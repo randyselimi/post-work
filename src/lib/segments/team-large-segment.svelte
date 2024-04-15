@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { preloadData, pushState, goto } from '$app/navigation';
-	import { page } from '$app/stores';
-	import TeamModal from '../modals/team-modal.svelte';
+	import LargeSegment from './large-segment.svelte';
 
 	export let team: any;
 	let showModal = false;
 </script>
 
-<div
+<LargeSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -24,19 +23,10 @@
 			goto('/team/' + team.id);
 		}
 	}}
-	class="segment"
 >
 	<h4>{team.title}</h4>
 	<div>
 		<p>Members: {team.members}</p>
 		<p>Hours: {team.hours}</p>
 	</div>
-</div>
-
-<style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>
+</LargeSegment>

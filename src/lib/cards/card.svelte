@@ -5,7 +5,11 @@
 	<slot class="full" name="full" />
 	<slot class="large" name="large" />
 	<slot class="small" name="small" />
-	<slot class="footer" name="footer" />
+	<slot/>
+	<slot/>
+	<div class="footer">
+		<slot name="footer" />
+	</div>
 </div>
 
 <style>
@@ -18,17 +22,13 @@
 		margin: 0.25em;
 		padding: 0.5em;
 		border-radius: 10px;
-	}
-	.full {
-		flex: 1;
-	}
-	.large {
-		flex: 1;
-	}
-	.small {
-		flex: 1;
+		height: 16rem;
+    width: 12.5rem;
 	}
 	.footer {
-		flex: 1;
+		height: 25%;
+		display: flex;
+    justify-content: center;
+    align-items: flex-end;
 	}
 </style>

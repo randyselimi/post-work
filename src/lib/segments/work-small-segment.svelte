@@ -2,12 +2,13 @@
 	import { preloadData, pushState, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import WorkModal from '../modals/work-modal.svelte';
+	import SmallSegment from './small-segment.svelte';
 
 	export let work: any;
 	let showModal = false;
 </script>
 
-<div
+<SmallSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -24,23 +25,7 @@
 			goto('/work/' + work.id);
 		}
 	}}
-	class="segment"
 >
 	<h4>{work.title}</h4>
-	<p>Hours: {work.hours} Due: {work.endDate}</p>
-</div>
-
-<!-- {#if $page.state.selected && showModal}
-	<WorkModal work={$page.state.selected.task} {showModal} on:close={() => {
-		showModal = false;
-		history.back();
-	}} />
-{/if} -->
-
-<style>
-	.segment {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>
+	<!-- <p>Hours: {work.hours} Due: {work.endDate}</p> -->
+</SmallSegment>

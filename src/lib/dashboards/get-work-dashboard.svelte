@@ -14,10 +14,10 @@
 	</div>
 	<div class="get-work-content" slot="content">
 		<DashboardTile title="Opportunities">
-			<!-- <OpportunitiesCarousel opportunityItems={opportunityItems.slice(0,3)} /> -->
+			<OpportunitiesCarousel opportunityItems={opportunityItems.slice(0,3)} />
 		</DashboardTile>
 		<DashboardTile title="Assigned to You">
-			<!-- <AssignedToYouCarousel assignedToYouItems={assignedToYouItems.slice(0,3)} /> -->
+			<AssignedToYouCarousel assignedToYouItems={assignedToYouItems.slice(0,3)} />
 		</DashboardTile>
 	</div>
 </Dashboard>

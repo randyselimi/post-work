@@ -2,12 +2,13 @@
 		import { preloadData, pushState, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import UserModal from '../modals/user-modal.svelte';
+	import SmallSegment from './small-segment.svelte';
 
 	export let user: any;
 	let showModal = false;
 </script>
 
-<div
+<SmallSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -24,26 +25,12 @@
 			goto('/user/' + user.id);
 		}
 	}}
-	class="segment"
 >
-	<img src={user.avatar} alt="avatar" />
-	<div>
+	<!-- <img src={user.avatar} alt="avatar" />
+	<div> -->
 		<h4>{user.firstName}</h4>
-		<p>{user.email}</p>
-	</div>
-</div>
+		<!-- <p>{user.email}</p>
+	</div> -->
+</SmallSegment>
 
-<!-- {#if $page.state.selected && showModal}
-	<UserModal user={$page.state.selected.user} {showModal} on:close={() => {
-		showModal = false;
-		history.back();
-	}} />
-{/if} -->
 
-<style>
-	.segment {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-</style>

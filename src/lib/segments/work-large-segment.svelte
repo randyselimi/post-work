@@ -2,6 +2,7 @@
 	import { preloadData, pushState, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import WorkModal from '../modals/work-modal.svelte';
+	import LargeSegment from './large-segment.svelte';
 
 	export let work: any;
 	let showModal = false;
@@ -9,7 +10,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
+<LargeSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -26,31 +27,11 @@
 			goto('/work/' + work.id);
 		}
 	}}
-	class="segment"
 >
 	<h4>{work.title}</h4>
-	<div>
+	<!-- <div>
 		<p>Hours: {work.hours}</p>
 		<p>Skills: {work.skills}</p>
 		<p>Due: {work.endDate}</p>
-	</div>
-</div>
-
-<!-- {#if $page.state.selected && showModal}
-	<WorkModal
-		work={$page.state.selected.task}
-		{showModal}
-		on:close={() => {
-			showModal = false;
-			history.back();
-		}}
-	/>
-{/if} -->
-
-<style>
-	.segment {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>
+	</div> -->
+</LargeSegment>
