@@ -12,12 +12,21 @@
 	<div slot="actions">
 		<PostWorkModal />
 	</div>
-	<div slot="content">
+	<div class="post-work-content" slot="content">
 		<DashboardTile title="Currenty Posted">
-			<CurrentlyPostedCarousel {currentlyPostedItems} />
+			<!-- <CurrentlyPostedCarousel {currentlyPostedItems} /> -->
 		</DashboardTile>
 		<DashboardTile title="In-Progress">
-			<InProgressCarousel {inProgressItems} />
+			<!-- <InProgressCarousel {inProgressItems} /> -->
 		</DashboardTile>
 	</div>
 </Dashboard>
+
+<style>
+		.post-work-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%
+
+	}
+</style>

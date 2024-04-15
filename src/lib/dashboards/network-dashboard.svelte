@@ -13,19 +13,27 @@
 		<button>Invite User</button>
 		<button>Connect Team</button>
 	</div>
-	<div slot="content">
+	<div class="network-content" slot="content">
 		<DashboardTile title="My Team">
-			<h2>Integrations Team</h2>
+			<!-- <h2>Integrations Team</h2>
 			<p>Members: 5</p>
 			<p>Projects: 3</p>
 			<p>Tasks: 10</p>
-			<UserCarousel users={myTeam.members} />
+			<UserCarousel users={myTeam.members.slice(0, 5)} /> -->
 		</DashboardTile>
 		<DashboardTile title="Connected Teams">
-			<TeamCarousel teams={connectedTeams} />
+			<!-- <TeamCarousel teams={connectedTeams} /> -->
 		</DashboardTile>
 		<DashboardTile title="Organization">
-			<h1>Please Add An Organization</h1>
+			<!-- <h1>Please Add An Organization</h1> -->
 		</DashboardTile>
 	</div>
 </Dashboard>
+
+<style>
+	.network-content {
+		display: flex;
+		justify-content: space-around;
+		height: 100%;
+	}
+</style>

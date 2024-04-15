@@ -21,24 +21,27 @@
 	const connectedTeams: Team[] = data.connectedTeams;
 </script>
 
-<div class="container">
-	<div class="row">
+<div class="dashboard-container">
+	<div class="dashboard-row">
 		<PostWorkDashboard {currentlyPostedItems} {inProgressItems} />
 		<GetWorkDashboard {opportunityItems} {assignedToYouItems} />
 	</div>
-	<NetworkDashboard {myTeam} {connectedTeams} />
+	<div class="dashboard-row">
+	    <NetworkDashboard {myTeam} {connectedTeams} />
+    </div>
 </div>
 
 <style>
-	.container {
+	.dashboard-container {
 		color: #111827;
+        background-color: white;
+    	height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+	
+	.dashboard-row {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		background-color: white;
-	}
-	.row {
-		display: flex;
+		flex: 1
 	}
 </style>

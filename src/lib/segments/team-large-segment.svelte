@@ -24,7 +24,7 @@
 			goto('/team/' + team.id);
 		}
 	}}
-	class="container"
+	class="segment"
 >
 	<h4>{team.title}</h4>
 	<div>
@@ -32,17 +32,6 @@
 		<p>Hours: {team.hours}</p>
 	</div>
 </div>
-
-{#if $page.state.selected && showModal}
-	<TeamModal
-		team={$page.state.selected.team}
-		{showModal}
-		on:close={() => {
-			showModal = false;
-			history.back();
-		}}
-	/>
-{/if}
 
 <style>
 	.container {

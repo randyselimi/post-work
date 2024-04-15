@@ -24,7 +24,7 @@
 			goto('/work/' + work.id);
 		}
 	}}
-	class="container"
+	class="segment"
 >
 	<h4>{work.title}</h4>
 	<p>Hours: {work.hours} Due: {work.endDate}</p>
@@ -38,7 +38,7 @@
 {/if} -->
 
 <style>
-	.container {
+	.segment {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -8,8 +8,8 @@
 </script>
 
 <Card>
-	<UserLargeSegment {user} slot="header" />
-	<WorkSmallSegment {work} slot="content" />
+	<UserLargeSegment {user} slot="large" />
+	<WorkSmallSegment {work} slot="small" />
 
 	<div slot="footer">
 		<button>Sign Off</button>

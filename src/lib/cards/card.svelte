@@ -2,9 +2,10 @@
 </script>
 
 <div class="card">
-	<slot name="header" />
-	<slot name="content" />
-	<slot name="footer" />
+	<slot class="full" name="full" />
+	<slot class="large" name="large" />
+	<slot class="small" name="small" />
+	<slot class="footer" name="footer" />
 </div>
 
 <style>
@@ -17,5 +18,17 @@
 		margin: 0.25em;
 		padding: 0.5em;
 		border-radius: 10px;
+	}
+	.full {
+		flex: 1;
+	}
+	.large {
+		flex: 1;
+	}
+	.small {
+		flex: 1;
+	}
+	.footer {
+		flex: 1;
 	}
 </style>

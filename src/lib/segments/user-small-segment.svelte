@@ -24,7 +24,7 @@
 			goto('/user/' + user.id);
 		}
 	}}
-	class="container"
+	class="segment"
 >
 	<img src={user.avatar} alt="avatar" />
 	<div>
@@ -41,7 +41,7 @@
 {/if} -->
 
 <style>
-	.container {
+	.segment {
 		display: flex;
 		flex-direction: row;
 		align-items: center;

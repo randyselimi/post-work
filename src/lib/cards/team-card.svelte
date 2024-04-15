@@ -6,7 +6,7 @@
 </script>
 
 <Card>
-	<TeamLargeSegment {team} slot="header" />
+	<TeamLargeSegment {team} slot="full" />
 
 	<div slot="footer">
 		<button>Pending</button>
