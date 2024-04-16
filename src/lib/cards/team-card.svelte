@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Card from './card.svelte';
-	import TeamLargeSegment from '../segments/team-large-segment.svelte';
+	import TeamFullSegment from '../segments/team-full-segment.svelte';
 
 	export let team: any;
 </script>
 
 <Card>
-	<TeamLargeSegment {team} slot="full" />
+	<TeamFullSegment {team} slot="full" />
 
 	<div slot="footer">
 		<button>Pending</button>

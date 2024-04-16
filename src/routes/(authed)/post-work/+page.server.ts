@@ -5,8 +5,8 @@ export function load() {
 	const loggedId = 2;
 
 	const tasks: Task[] = db.getTasks(loggedId);
-
+	const postTasks = tasks.filter((task) => task.postedBy === loggedId);
 	return {
-		tasks
+		postTasks
 	};
 }

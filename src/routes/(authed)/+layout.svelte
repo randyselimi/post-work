@@ -15,51 +15,52 @@
 	<h1 class="app-profile">Logout</h1>
 </div>
 {#if $page.state.selected}
-{#if $page.state.selected.team}
-	<TeamModal
-		team={$page.state.selected.team}
-		{showModal}
-		on:close={() => {
-			history.back();
-		}}
-	/>
-{:else if $page.state.selected.task}
-	<WorkModal
-		work={$page.state.selected.task}
-		{showModal}
-		on:close={() => {
-			history.back();
-		}}
-	/>
-{:else if $page.state.selected.user}
-	<UserModal
-		user={$page.state.selected.user}
-		{showModal}
-		on:close={() => {
-			history.back();
-		}}
-	/>
+	{#if $page.state.selected.team}
+		<TeamModal
+			team={$page.state.selected.team}
+			{showModal}
+			on:close={() => {
+				history.back();
+			}}
+		/>
+	{:else if $page.state.selected.task}
+		<WorkModal
+			work={$page.state.selected.task}
+			{showModal}
+			on:close={() => {
+				history.back();
+			}}
+		/>
+	{:else if $page.state.selected.user}
+		<UserModal
+			user={$page.state.selected.user}
+			{showModal}
+			on:close={() => {
+				history.back();
+			}}
+		/>
+	{/if}
 {/if}
-{/if}
+
 <style>
 	.app-container {
 		display: flex;
 	}
 	.app-title {
 		flex: 1;
-    font-size: 4rem;
-    margin: 1rem 1rem 1rem 1rem;
+		font-size: 4rem;
+		margin: 1rem 1rem 1rem 1rem;
 	}
 	.app-main {
 		flex: 8;
-    height: 70rem;
-    margin: 7.5rem 2rem;
+		height: 70rem;
+		margin: 0rem 0rem;
 	}
 	.app-profile {
 		flex: 1;
 		flex: 1;
-    font-size: 4rem;
-    margin: 1rem 1rem 1rem 1rem;
-		text-align: right
+		font-size: 4rem;
+		margin: 1rem 1rem 1rem 1rem;
+		text-align: right;
 	}
 </style>

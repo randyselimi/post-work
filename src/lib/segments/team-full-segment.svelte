@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { preloadData, pushState, goto } from '$app/navigation';
-	import LargeSegment from './large-segment.svelte';
+	import FullSegment from './full-segment.svelte';
 
 	export let team: any;
 	let showModal = false;
 </script>
 
-<LargeSegment
+<FullSegment
 	on:click={async (e) => {
 		// prevent navigation
 		e.preventDefault();
@@ -24,9 +24,9 @@
 		}
 	}}
 >
-	<h4>{team.title}</h4>
+	<h4>{team.name}</h4>
 	<div>
-		<p>Members: {team.members}</p>
+		<p>Members: {team.members.length}</p>
 		<p>Hours: {team.hours}</p>
 	</div>
-</LargeSegment>
+</FullSegment>

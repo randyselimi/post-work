@@ -8,7 +8,12 @@
 			d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
 		/></svg
 	>
-	<slot />
+	<!-- <fieldset> -->
+	<div class="carousel-content">
+		<slot />
+	</div>
+	<!-- </fieldset> -->
+
 	<svg class="right-chevron" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"
 		><style>
 			svg {
@@ -22,9 +27,16 @@
 
 <style>
 	.carousel {
-		background-color: #f4f5f7;
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
+	}
+	.carousel-content {
+		flex: 2;
+		overflow-x: auto;
+		overflow-y: hidden;
+		display: flex;
+		justify-content: center;
 	}
 	.left-chevron {
 		margin: 0px 6px 0px 10px;
