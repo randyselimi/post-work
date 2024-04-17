@@ -2,6 +2,7 @@
 	import Modal from './modal.svelte';
 
 	export let showModal: boolean;
+	export let actions: string[] = [];
 	export let detailOptions: { title: string; position: number }[];
 	let selectedDetail = 0;
 	let dialog: HTMLDialogElement; // HTMLDialogElement
@@ -11,7 +12,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <button>Test</button>
-<Modal bind:showModal>
+<Modal {actions} bind:showModal>
 	<div class="detail-modal-header">
 		<div>Back Button</div>
 		<div>Detail View</div>

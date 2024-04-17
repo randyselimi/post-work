@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let showModal: boolean;
-
+	export let actions: string[] = [];
 	let dialog: HTMLDialogElement; // HTMLDialogElement
 
 	$: if (dialog) showModal ? dialog.showModal() : dialog.close();
@@ -14,12 +14,10 @@
 	on:click|self={() => dialog.close()}
 >
 	<div class="above-modal">
-		<div>
-			<button style="margin-bottom: 0;">Export</button>
-			<slot name="modal-actions" />
-		</div>
+		{#each actions as action}
+			<button style="margin-bottom: 0;">{action}</button>
+		{/each}
 	</div>
-
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
 		<div class="modal">
@@ -38,8 +36,8 @@
 		border: none;
 		padding: 0;
 		background: rgba(0, 0, 0, 0.3);
-		display: flex;
-		justify-content: space-between;
+		/* display: flex;
+		justify-content: space-between; */
 	}
 	dialog {
 		width: 85rem;

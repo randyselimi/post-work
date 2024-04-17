@@ -14,10 +14,11 @@
 		{ title: 'Communications', position: 1 },
 		{ title: 'History', position: 2 }
 	];
+	const actions = ['Edit', 'Delete'];
 	console.log(work);
 </script>
 
-<DetailModal {detailOptions} bind:showModal>
+<DetailModal {actions} {detailOptions} bind:showModal>
 	<div slot="content">
 		<h2>{work.title}</h2>
 		<div style="display: flex; flex-direction: row;">
