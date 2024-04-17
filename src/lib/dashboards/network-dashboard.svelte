@@ -11,14 +11,14 @@
 <Dashboard title="Network">
 	<div slot="actions"></div>
 	<div class="network-content" slot="content">
-		<DashboardTile title="My Team" redirect="user">
+		<DashboardTile title="My Team" redirect="my-team">
 			<div slot="actions">
 				<button>View Team</button>
 				<button disabled>Invite User</button>
 			</div>
 			<UserCarousel users={myTeam.members.slice(0, 5)} />
 		</DashboardTile>
-		<DashboardTile title="Connected Teams" redirect="team">
+		<DashboardTile title="Connected Teams" redirect="connected-teams">
 			<div slot="actions">
 				<button disabled>Connect Team</button>
 			</div>
