@@ -14,10 +14,10 @@
 	</div>
 	<div class="post-work-content" slot="content">
 		<DashboardTile title="Currenty Posted">
-			<!-- <CurrentlyPostedCarousel {currentlyPostedItems} /> -->
+			<CurrentlyPostedCarousel {currentlyPostedItems} />
 		</DashboardTile>
 		<DashboardTile title="In-Progress">
-			<!-- <InProgressCarousel {inProgressItems} /> -->
+			<InProgressCarousel {inProgressItems} />
 		</DashboardTile>
 	</div>
 </Dashboard>

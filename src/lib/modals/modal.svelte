@@ -7,18 +7,23 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+
 <dialog
 	bind:this={dialog}
 	on:close={() => (showModal = false)}
 	on:click|self={() => dialog.close()}
 >
+	<div class="above-modal">
+		<div>
+			<button style="margin-bottom: 0;">Export</button>
+			<slot name="modal-actions" />
+		</div>
+	</div>
+
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
 		<div class="modal">
-			<slot name="header" />
 			<slot />
-			<slot name="content" />
-			<slot name="footer" />
 		</div>
 	</div>
 </dialog>
@@ -28,9 +33,18 @@
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-		width: 35em;
+	}
+	.above-modal {
+		border: none;
+		padding: 0;
+		background: rgba(0, 0, 0, 0.3);
+		display: flex;
+		justify-content: space-between;
 	}
 	dialog {
+		width: 85rem;
+		height: 60rem;
+
 		border-radius: 0.2em;
 		border: none;
 		padding: 0;

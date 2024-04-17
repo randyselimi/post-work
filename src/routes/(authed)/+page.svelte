@@ -10,7 +10,7 @@
 
 	const myUser: User = data.myUser;
 	const currentlyPostedItems: Task[] = myUser.workPosted.filter(
-		(task) => (task as Task).status === 'Posted'
+		(task) => (task as Task).status === 'Pending'
 	) as Task[];
 	const inProgressItems: Task[] = myUser.workPosted.filter(
 		(task) => (task as Task).status === 'Assigned'
@@ -27,21 +27,21 @@
 		<GetWorkDashboard {opportunityItems} {assignedToYouItems} />
 	</div>
 	<div class="dashboard-row">
-	    <NetworkDashboard {myTeam} {connectedTeams} />
-    </div>
+		<NetworkDashboard {myTeam} {connectedTeams} />
+	</div>
 </div>
 
 <style>
 	.dashboard-container {
 		color: #111827;
-        background-color: white;
-    	height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-	
+		background-color: white;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.dashboard-row {
 		display: flex;
-		flex: 1
+		flex: 1;
 	}
 </style>

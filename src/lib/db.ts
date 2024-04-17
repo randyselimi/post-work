@@ -181,7 +181,7 @@ export function getUser(userId: number): User {
 			workPosted: data.workPosted,
 			workAssigned: data.workAssigned
 		};
-		task.assignedTo = user;
+		task.postedBy = user;
 	});
 	user.workAvailable.forEach((task) => {
 		const data: UserData = userData.find((data) => data.id === task.postedBy)!;

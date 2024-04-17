@@ -1,11 +1,11 @@
 <div class="large-segment">
-    <slot />
+	<slot />
 </div>
 
 <style>
-    .large-segment {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-    }
+	.large-segment {
+		height: 50%;
+		display: flex;
+		flex-direction: column;
+	}
 </style>

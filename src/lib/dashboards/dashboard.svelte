@@ -3,7 +3,9 @@
 </script>
 
 <div class="dashboard">
-	<h2 class="dashboard-title">{title}</h2>
+	<h2 class="dashboard-title">
+		{title} <span class="material-symbols-outlined"> more_vert </span>
+	</h2>
 	<slot name="actions" />
 	<div class="dashboard-content">
 		<slot name="content" />

@@ -3,6 +3,7 @@
 	import TeamModal from '$lib/modals/team-modal.svelte';
 	import WorkModal from '$lib/modals/work-modal.svelte';
 	import UserModal from '$lib/modals/user-modal.svelte';
+	import Avatar from '$lib/avatar.svelte';
 
 	$: showModal = $page.state.selected;
 </script>
@@ -12,7 +13,7 @@
 	<div class="app-main">
 		<slot />
 	</div>
-	<h1 class="app-profile">Logout</h1>
+	<h1 class="app-profile"><Avatar email={'test'} />Randy Selimi</h1>
 </div>
 {#if $page.state.selected}
 	{#if $page.state.selected.team}

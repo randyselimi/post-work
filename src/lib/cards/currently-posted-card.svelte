@@ -6,7 +6,7 @@
 </script>
 
 <Card>
-	<WorkLargeSegment {work} slot="full" />
+	<WorkLargeSegment {work} slot="primary" />
 
 	<div slot="footer">
 		<button>Pending</button>

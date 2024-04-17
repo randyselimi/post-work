@@ -1,11 +1,11 @@
 <div class="small-segment">
-    <slot />
+	<slot />
 </div>
 
 <style>
-    .small-segment {
-        height: 25%;
-        display: flex;
-        flex-direction: column; 
-    }
+	.small-segment {
+		height: 25%;
+		display: flex;
+		flex-direction: column;
+	}
 </style>

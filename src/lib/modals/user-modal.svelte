@@ -2,24 +2,17 @@
 	import type { User } from '$lib/User';
 	import type { Team } from '$lib/Team';
 	import Modal from './modal.svelte';
+	import TallAvatarChip from '$lib/chips/tall-avatar-chip.svelte';
 
 	export let user: User;
 	export let showModal = false;
-	let team = user.team as Team
+	let team = user.team as Team;
 </script>
 
 <Modal bind:showModal>
-	<div slot="header">
-		<h2>{user.fullName}</h2>
-		<h3>{user.email}</h3>
-	</div>
+	<TallAvatarChip {user} />
 
-	<div slot="content">
-		<p>{team.name}</p>
-	</div>
+	<p>{team.name}</p>
 
-	<div slot="footer">
-		<!-- svelte-ignore a11y-autofocus -->
-		<button autofocus on:click={() => (showModal = false)}>Close</button>
-	</div>
+	<!-- svelte-ignore a11y-autofocus -->
 </Modal>

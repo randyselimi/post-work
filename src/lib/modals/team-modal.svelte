@@ -1,21 +1,20 @@
 <script lang="ts">
+	import type { Team } from '$lib/Team';
 	import Modal from './modal.svelte';
 
-	export let team: string;
+	export let team: Team;
 	export let showModal = false;
 </script>
 
 <Modal bind:showModal>
-	<div slot="header">
-		<h2>{team}</h2>
-	</div>
+	<div>
+		<h2>{team.name}</h2>
 
-	<div slot="content">
 		<p>Team Details</p>
 	</div>
+	<div></div>
+	<!-- <p>Members: {team.members.length}</p>
+		<p>Connected Teams: {team.connectedTeams.length}</p> -->
 
-	<div slot="footer">
-		<!-- svelte-ignore a11y-autofocus -->
-		<button autofocus on:click={() => (showModal = false)}>Close</button>
-	</div>
+	<!-- svelte-ignore a11y-autofocus -->
 </Modal>

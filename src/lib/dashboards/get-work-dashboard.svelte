@@ -6,6 +6,7 @@
 	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 	export let opportunityItems: any;
 	export let assignedToYouItems: any;
+	console.log(assignedToYouItems);
 </script>
 
 <Dashboard title="Get Work">

@@ -6,7 +6,7 @@
 </script>
 
 <Card>
-	<UserFullSegment {user} slot="full" />
+	<UserFullSegment {user} slot="primary" />
 
 	<div slot="footer">
 		<button>Pending</button>

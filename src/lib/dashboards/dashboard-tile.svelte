@@ -4,7 +4,9 @@
 
 <div class="dashboard-tile">
 	<div class="dashboard-title-header">
-		<h3 style="margin-bottom: 0" class="dashboard-tile-title">{title}</h3>
+		<h3 style="margin-bottom: 0" class="dashboard-tile-title">
+			{title} <span class="material-symbols-outlined"> more_vert </span>
+		</h3>
 		<p style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
 			1 Available 4 Test
 		</p>

@@ -1,27 +1,63 @@
 <script lang="ts">
 	import type { Task } from '$lib/Task';
 	import type { User } from '$lib/User';
+	import TallAvatarChip from '$lib/chips/tall-avatar-chip.svelte';
+	import DetailModal from './detail-modal.svelte';
 	import Modal from './modal.svelte';
 
 	export let work: Task;
 	export let showModal = false;
-	const postedBy = work.postedBy as User
-	const assignedTo = work.assignedTo as User
+	const postedBy = work.postedBy as User;
+	const assignedTo = work.assignedTo as User;
+	const detailOptions = [
+		{ title: 'Communications', position: 0 },
+		{ title: 'History', position: 1 }
+	];
+	console.log(work);
 </script>
 
-<Modal bind:showModal>
-	<div slot="header">
-		<h2>{work.title}</h2>
-		<h3>{postedBy.fullName}</h3>
-		<h3>{assignedTo?.fullName || 'Unassigned'}</h3>
-	</div>
-
+<DetailModal {detailOptions} bind:showModal>
 	<div slot="content">
+		<h2>{work.title}</h2>
+		<div style="display: flex; flex-direction: row;">
+			<div>
+				<h3>Posted by</h3>
+				<TallAvatarChip user={postedBy} />
+			</div>
+			<div>
+				<h3>Assigned to</h3>
+				{#if assignedTo !== null}
+					<TallAvatarChip user={assignedTo} />
+				{:else}
+					<h3>Unassigned</h3>
+				{/if}
+			</div>
+		</div>
+		<p>Hours {work.hours}</p>
+		<p>Started {work.startDate}</p>
+		<p>Billing Folder {work.billingInfo.projectFolder}</p>
+		<p>Billing Code {work.billingInfo.projectCode}</p>
+		<p>Due {work.endDate}</p>
+		<p>Skills {work.skills}</p>
 		<p>{work.description}</p>
 	</div>
-
-	<div slot="footer">
-		<!-- svelte-ignore a11y-autofocus -->
-		<button autofocus on:click={() => (showModal = false)}>Close</button>
+	<div slot="folder0">
+		<p>Communications</p>
 	</div>
-</Modal>
+	<div slot="folder1">
+		<p>History</p>
+	</div>
+</DetailModal>
+
+<style>
+	.work-detail-container {
+		display: flex;
+	}
+	.work-detail-element {
+		flex: 1;
+	}
+	.work-detail-content {
+		display: flex;
+		flex-direction: column;
+	}
+</style>

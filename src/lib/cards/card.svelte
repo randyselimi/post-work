@@ -2,11 +2,10 @@
 </script>
 
 <div class="card">
-	<slot class="full" name="full" />
-	<slot class="large" name="large" />
-	<slot class="small" name="small" />
-	<slot />
-	<slot />
+	<slot name="primary" />
+	<hr class="card-divider" />
+	<slot name="secondary" />
+	<hr class="card-divider" />
 	<div class="footer">
 		<slot name="footer" />
 	</div>
@@ -26,6 +25,9 @@
 		border-radius: 10px;
 		height: 14.5rem;
 		width: 11rem;
+	}
+	.card-divider {
+		width: 75%;
 	}
 	.footer {
 		height: 25%;
