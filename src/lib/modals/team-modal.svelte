@@ -1,20 +1,32 @@
 <script lang="ts">
 	import type { Team } from '$lib/Team';
-	import Modal from './modal.svelte';
-
+	import DetailModal from './detail-modal.svelte';
+	const detailOptions = [
+		{ title: 'Members', position: 0 },
+		{ title: 'Connected Teams', position: 1 },
+		{ title: 'Posted', position: 2 },
+		{ title: 'Assigned', position: 3 }
+	];
 	export let team: Team;
 	export let showModal = false;
 </script>
 
-<Modal bind:showModal>
-	<div>
+<DetailModal {detailOptions} bind:showModal>
+	<div slot="content">
 		<h2>{team.name}</h2>
 
 		<p>Team Details</p>
 	</div>
-	<div></div>
-	<!-- <p>Members: {team.members.length}</p>
-		<p>Connected Teams: {team.connectedTeams.length}</p> -->
-
-	<!-- svelte-ignore a11y-autofocus -->
-</Modal>
+	<div slot="folder0">
+		<p>Skills</p>
+	</div>
+	<div slot="folder1">
+		<p>Skills</p>
+	</div>
+	<div slot="folder2">
+		<p>Skills</p>
+	</div>
+	<div slot="folder3">
+		<p>Contact</p>
+	</div>
+</DetailModal>

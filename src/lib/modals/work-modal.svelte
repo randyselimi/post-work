@@ -10,8 +10,9 @@
 	const postedBy = work.postedBy as User;
 	const assignedTo = work.assignedTo as User;
 	const detailOptions = [
-		{ title: 'Communications', position: 0 },
-		{ title: 'History', position: 1 }
+		{ title: 'Details', position: 0 },
+		{ title: 'Communications', position: 1 },
+		{ title: 'History', position: 2 }
 	];
 	console.log(work);
 </script>

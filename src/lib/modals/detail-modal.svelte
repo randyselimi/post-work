@@ -10,9 +10,9 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-
+<button>Test</button>
 <Modal bind:showModal>
-	<div>
+	<div class="detail-modal-header">
 		<div>Back Button</div>
 		<div>Detail View</div>
 		<span
@@ -23,9 +23,11 @@
 			close
 		</span>
 	</div>
-	<div class="work-detail-container">
-		<slot name="content"></slot>
-		<div class="folder">
+	<div class="detail-modal-content">
+		<div class="detail-modal-content-element">
+			<slot name="content"></slot>
+		</div>
+		<div class="detail-modal-content-element detail-modal-folders">
 			<div>
 				<div>
 					{#each detailOptions as detailOption}
@@ -53,52 +55,16 @@
 </Modal>
 
 <style>
-	.modal {
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-	}
-	.above-modal {
-		border: none;
-		padding: 0;
-		background: rgba(0, 0, 0, 0.3);
+	.detail-modal-header {
 		display: flex;
 		justify-content: space-between;
+		align-items: stretch;
 	}
-	dialog {
-		width: 85rem;
-		height: 60rem;
-
-		border-radius: 0.2em;
-		border: none;
-		padding: 0;
+	.detail-modal-content {
+		display: flex;
+		align-items: stretch;
 	}
-	dialog::backdrop {
-		background: rgba(0, 0, 0, 0.3);
-	}
-	dialog > div {
-		padding: 1em;
-	}
-	dialog[open] {
-		animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-	}
-	@keyframes zoom {
-		from {
-			transform: scale(0.95);
-		}
-		to {
-			transform: scale(1);
-		}
-	}
-	dialog[open]::backdrop {
-		animation: fade 0.2s ease-out;
-	}
-	@keyframes fade {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
+	.detail-modal-content-element {
+		width: 50%;
 	}
 </style>
