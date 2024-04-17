@@ -8,15 +8,15 @@
 	export let inProgressItems: any;
 </script>
 
-<Dashboard title="Post Work">
+<Dashboard title="Post Work" redirect="post-work">
 	<div slot="actions">
 		<PostWorkModal />
 	</div>
 	<div class="post-work-content" slot="content">
-		<DashboardTile title="Currenty Posted">
+		<DashboardTile title="Currenty Posted" redirect="post-work">
 			<CurrentlyPostedCarousel {currentlyPostedItems} />
 		</DashboardTile>
-		<DashboardTile title="In-Progress">
+		<DashboardTile title="In-Progress" redirect="post-work">
 			<InProgressCarousel {inProgressItems} />
 		</DashboardTile>
 	</div>

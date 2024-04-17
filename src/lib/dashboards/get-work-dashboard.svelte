@@ -9,15 +9,15 @@
 	console.log(assignedToYouItems);
 </script>
 
-<Dashboard title="Get Work">
+<Dashboard title="Get Work" redirect="get-work">
 	<div slot="actions">
 		<UpdateHoursModal />
 	</div>
 	<div class="get-work-content" slot="content">
-		<DashboardTile title="Opportunities">
+		<DashboardTile title="Opportunities" redirect="get-work">
 			<OpportunitiesCarousel opportunityItems={opportunityItems.slice(0, 3)} />
 		</DashboardTile>
-		<DashboardTile title="Assigned to You">
+		<DashboardTile title="Assigned to You" redirect="get-work">
 			<AssignedToYouCarousel assignedToYouItems={assignedToYouItems.slice(0, 3)} />
 		</DashboardTile>
 	</div>

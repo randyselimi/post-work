@@ -1,10 +1,15 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	export let title = '';
+	export let redirect = '';
 </script>
 
 <div class="dashboard">
-	<h2 class="dashboard-title">
-		{title} <span class="material-symbols-outlined"> more_vert </span>
+	<h2 class="dashboard-title" on:click={goto('/' + redirect)}>
+		{title}
+		{#if redirect}<span class="material-symbols-outlined"> more_vert </span>
+		{/if}
 	</h2>
 	<slot name="actions" />
 	<div class="dashboard-content">
@@ -25,11 +30,8 @@
 	}
 	.dashboard-content {
 		border-radius: 0 10px 10px;
-		/* display: flex; */
 		padding: 10px;
 		flex: 1;
-		/* flex-direction: column; */
-		/* align-items: stretch; */
 		background-color: white;
 		height: 100%;
 		box-shadow:

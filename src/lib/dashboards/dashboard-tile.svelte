@@ -1,19 +1,22 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	export let title = '';
+	export let redirect = '';
 </script>
 
 <div class="dashboard-tile">
 	<div class="dashboard-title-header">
-		<h3 style="margin-bottom: 0" class="dashboard-tile-title">
-			{title} <span class="material-symbols-outlined"> more_vert </span>
+		<h3 style="margin-bottom: 0" class="dashboard-tile-title" on:click={goto('/' + redirect)}>
+			{title}
+			{#if redirect}<span class="material-symbols-outlined"> more_vert </span>
+			{/if}
 		</h3>
 		<p style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
 			1 Available 4 Test
 		</p>
 		<div class="dashboard-tile-actions">
-			<!-- <button style="margin-bottom: 0">Export</button> -->
-			<button>Add</button>
-			<button disabled>Test</button>
+			<slot name="actions" />
 			<hr style="margin-top: 0" />
 		</div>
 	</div>
