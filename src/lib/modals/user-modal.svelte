@@ -10,11 +10,10 @@
 	let team = user.team as Team;
 
 	const detailOptions = [
-		{ title: 'Details', position: 0 },
-		{ title: 'Assigned', position: 1 },
-		{ title: 'Posted', position: 2 },
-		{ title: 'Skills', position: 3 },
-		{ title: 'Contact', position: 4 }
+		{ title: 'Assigned', position: 0 },
+		{ title: 'Posted', position: 1 },
+		{ title: 'Skills', position: 2 },
+		{ title: 'Contact', position: 3 }
 	];
 </script>
 

@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { Team } from '$lib/Team';
+	import TeamTable from '$lib/tables/team-table.svelte';
+	import UserTable from '$lib/tables/user-table.svelte';
 	import DetailModal from './detail-modal.svelte';
 	const detailOptions = [
 		{ title: 'Members', position: 0 },
-		{ title: 'Connected Teams', position: 1 },
-		{ title: 'Posted', position: 2 },
-		{ title: 'Assigned', position: 3 }
+		{ title: 'Connected Teams', position: 1 }
+		// { title: 'Posted', position: 2 },
+		// { title: 'Assigned', position: 3 }
 	];
 	export let team: Team;
 	export let showModal = false;
@@ -18,15 +20,15 @@
 		<p>Team Details</p>
 	</div>
 	<div slot="folder0">
-		<p>Skills</p>
+		<UserTable users={team.members}></UserTable>
 	</div>
 	<div slot="folder1">
-		<p>Skills</p>
+		<TeamTable teams={team.connectedTeams}></TeamTable>
 	</div>
-	<div slot="folder2">
+	<!-- <div slot="folder2">
 		<p>Skills</p>
 	</div>
 	<div slot="folder3">
 		<p>Contact</p>
-	</div>
+	</div> -->
 </DetailModal>

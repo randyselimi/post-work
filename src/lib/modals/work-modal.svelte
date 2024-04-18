@@ -10,9 +10,8 @@
 	const postedBy = work.postedBy as User;
 	const assignedTo = work.assignedTo as User;
 	const detailOptions = [
-		{ title: 'Details', position: 0 },
-		{ title: 'Communications', position: 1 },
-		{ title: 'History', position: 2 }
+		{ title: 'Communications', position: 0 },
+		{ title: 'History', position: 1 }
 	];
 	const actions = ['Edit', 'Delete'];
 	console.log(work);

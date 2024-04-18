@@ -11,8 +11,7 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-<button>Test</button>
-<Modal {actions} bind:showModal>
+<Modal bind:showModal>
 	<div class="detail-modal-header">
 		<div>Back Button</div>
 		<div>Detail View</div>
@@ -24,7 +23,8 @@
 			close
 		</span>
 	</div>
-	<div class="detail-modal-content">
+	<fieldset class="detail-modal-content">
+		<legend>Detail View</legend>
 		<div class="detail-modal-content-element">
 			<slot name="content"></slot>
 		</div>
@@ -50,7 +50,7 @@
 				{/if}
 			</div>
 		</div>
-	</div>
+	</fieldset>
 
 	<!-- svelte-ignore a11y-autofocus -->
 </Modal>

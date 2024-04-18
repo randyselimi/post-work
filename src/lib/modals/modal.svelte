@@ -13,11 +13,6 @@
 	on:close={() => (showModal = false)}
 	on:click|self={() => dialog.close()}
 >
-	<div class="above-modal">
-		{#each actions as action}
-			<button style="margin-bottom: 0;">{action}</button>
-		{/each}
-	</div>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
 		<div class="modal">
@@ -32,16 +27,9 @@
 		flex-direction: column;
 		align-items: stretch;
 	}
-	.above-modal {
-		border: none;
-		padding: 0;
-		background: rgba(0, 0, 0, 0.3);
-		/* display: flex;
-		justify-content: space-between; */
-	}
 	dialog {
 		width: 85rem;
-		height: 60rem;
+		height: 45rem;
 
 		border-radius: 0.2em;
 		border: none;
