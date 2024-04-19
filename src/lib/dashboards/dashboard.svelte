@@ -6,11 +6,23 @@
 </script>
 
 <div class="dashboard">
-	<h2 class="dashboard-title" on:click={goto('/' + redirect)}>
-		{title}
-		{#if redirect}<span class="material-symbols-outlined"> more_vert </span>
+	<div
+		class="dashboard-title"
+		tabindex="0"
+		role="button"
+		on:keydown={() => goto('/' + redirect)}
+		on:click={() => goto('/' + redirect)}
+	>
+		<h2>{title}</h2>
+
+		{#if redirect}<span
+				style="padding: .2rem .2rem; font-size: 1.7rem"
+				class="material-symbols-outlined"
+			>
+				more_vert
+			</span>
 		{/if}
-	</h2>
+	</div>
 	<slot name="actions" />
 	<div class="dashboard-content">
 		<slot name="content" />
@@ -27,6 +39,8 @@
 	}
 	.dashboard-title {
 		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
 	}
 	.dashboard-content {
 		border-radius: 0 10px 10px;

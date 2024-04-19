@@ -7,11 +7,31 @@
 
 <div class="dashboard-tile">
 	<div class="dashboard-title-header">
-		<h3 style="margin-bottom: 0" class="dashboard-tile-title" on:click={goto('/' + redirect)}>
-			{title}
-			{#if redirect}<span class="material-symbols-outlined"> more_vert </span>
+		<div
+			style="margin-bottom: 0"
+			class="dashboard-tile-title"
+			tabindex="0"
+			role="button"
+			on:keydown={() => goto('/' + redirect)}
+			on:click={() => goto('/' + redirect)}
+		>
+			{#if redirect}<span
+					style="font-size: 1.4rem; padding: .2rem .2rem; color: transparent"
+					class="material-symbols-outlined"
+				>
+					more_vert
+				</span>
 			{/if}
-		</h3>
+			<h3>{title}</h3>
+
+			{#if redirect}<span
+					style="padding: .2rem .2rem; font-size: 1.4rem"
+					class="material-symbols-outlined"
+				>
+					more_vert
+				</span>
+			{/if}
+		</div>
 		<slot name="subtext" />
 		<div class="dashboard-tile-actions">
 			<slot name="actions" />
@@ -39,7 +59,8 @@
 		align-items: center;
 	}
 	.dashboard-tile-title {
-		text-align: center;
+		display: flex;
+		align-items: center;
 	}
 	.dashboard-tile-subtitle {
 		text-align: center;
