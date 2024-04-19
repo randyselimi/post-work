@@ -1,10 +1,12 @@
 <script lang="ts">
+	import Modal from '$lib/modals/modal.svelte';
+
 	$: showModal = false;
 </script>
 
 <button on:click={() => (showModal = true)}> Post Task </button>
 
-{#if showModal}
+<Modal bind:showModal>
 	<form>
 		<fieldset id="post-task">
 			<legend>Post Task</legend>
@@ -50,7 +52,7 @@
 			</div>
 		</fieldset>
 	</form>
-{/if}
+</Modal>
 
 <style>
 	.header {

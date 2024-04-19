@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Dashboard from './dashboard.svelte';
-	import PostTaskForm from '../modals/post-work-modal.svelte';
+	import PostTaskForm from '../forms/post-task-form.svelte';
 	import DashboardTile from './dashboard-tile.svelte';
 	import CurrentlyPostedCarousel from '../carousel/currently-posted-carousel.svelte';
 	import InProgressCarousel from '../carousel/in-progress-carousel.svelte';

@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Dashboard from '../dashboards/dashboard.svelte';
+	import UpdateHoursForm from '$lib/forms/update-hours-form.svelte';
 	import DashboardTile from '../dashboards/dashboard-tile.svelte';
 	import WorkTable from '../tables/work-table.svelte';
-	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 	export let getWorkItems: any;
 </script>
 
 <Dashboard title="Get Work List View">
 	<div slot="actions">
-		<UpdateHoursModal />
+		<UpdateHoursForm />
 		<button disabled>Export</button>
 	</div>
 	<div class="get-work-list-content" slot="content">

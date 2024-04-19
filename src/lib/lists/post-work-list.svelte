@@ -1,6 +1,6 @@
 <script lang="ts">
-	import PostWorkModal from '../modals/post-work-modal.svelte';
 	import Dashboard from '../dashboards/dashboard.svelte';
+	import PostTaskForm from '$lib/forms/post-task-form.svelte';
 	import DashboardTile from '../dashboards/dashboard-tile.svelte';
 	import WorkTable from '../tables/work-table.svelte';
 	export let postWorkItems: any;
@@ -8,7 +8,7 @@
 
 <Dashboard title="Post Work List View">
 	<div slot="actions">
-		<PostWorkModal />
+		<PostTaskForm />
 		<button disabled>Export</button>
 	</div>
 	<div class="post-work-list-content" slot="content">

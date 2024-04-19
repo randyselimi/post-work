@@ -3,7 +3,7 @@
 	import DashboardTile from './dashboard-tile.svelte';
 	import Dashboard from './dashboard.svelte';
 	import OpportunitiesCarousel from '../carousel/opportunities-carousel.svelte';
-	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
+	import UpdateHoursForm from '$lib/forms/update-hours-form.svelte';
 	export let opportunityItems: any;
 	export let assignedToYouItems: any;
 	console.log(assignedToYouItems);
@@ -11,7 +11,7 @@
 
 <Dashboard title="Get Work" redirect="get-work">
 	<div slot="actions">
-		<UpdateHoursModal />
+		<UpdateHoursForm />
 	</div>
 	<div class="get-work-content" slot="content">
 		<DashboardTile title="Opportunities" redirect="get-work">
