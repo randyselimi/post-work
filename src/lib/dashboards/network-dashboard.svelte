@@ -12,6 +12,9 @@
 	<div slot="actions"></div>
 	<div class="network-content" slot="content">
 		<DashboardTile title="My Team" redirect="my-team">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{myTeam.members.length} team members
+			</p>
 			<div slot="actions">
 				<button>View Team</button>
 				<button disabled>Invite User</button>
@@ -19,6 +22,9 @@
 			<UserCarousel users={myTeam.members.slice(0, 5)} />
 		</DashboardTile>
 		<DashboardTile title="Connected Teams" redirect="connected-teams">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{connectedTeams.length} connected team(s)
+			</p>
 			<div slot="actions">
 				<button disabled>Connect Team</button>
 			</div>

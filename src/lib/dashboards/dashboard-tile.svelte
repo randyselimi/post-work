@@ -12,9 +12,7 @@
 			{#if redirect}<span class="material-symbols-outlined"> more_vert </span>
 			{/if}
 		</h3>
-		<p style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
-			1 Available 4 Test
-		</p>
+		<slot name="subtext" />
 		<div class="dashboard-tile-actions">
 			<slot name="actions" />
 			<hr style="margin-top: 0" />

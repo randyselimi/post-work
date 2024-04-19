@@ -1,14 +1,9 @@
 <script>
+	import MediumDivider from '$lib/dividers/medium-divider.svelte';
 </script>
 
 <div class="card">
-	<slot name="primary" />
-	<hr class="card-divider" />
-	<slot name="secondary" />
-	<hr class="card-divider" />
-	<div class="footer">
-		<slot name="footer" />
-	</div>
+	<slot />
 </div>
 
 <style>
@@ -25,14 +20,5 @@
 		border-radius: 10px;
 		height: 14.5rem;
 		width: 11rem;
-	}
-	.card-divider {
-		width: 75%;
-	}
-	.footer {
-		height: 25%;
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
 	}
 </style>

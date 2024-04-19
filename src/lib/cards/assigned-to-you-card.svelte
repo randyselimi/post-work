@@ -1,17 +1,44 @@
 <script lang="ts">
-	import Card from './card.svelte';
-	import WorkLargeSegment from '../segments/work-large-segment.svelte';
-	import UserSmallSegment from '../segments/user-small-segment.svelte';
+	import ActionCard from './action-card.svelte';
+	import { softRoute } from '../SoftRoute';
+	import WideAvatarChip from '$lib/chips/wide-avatar-chip.svelte';
 
 	export let work: any;
 	export let user: any;
 </script>
 
-<Card>
-	<WorkLargeSegment {work} slot="primary" />
-	<UserSmallSegment {user} slot="secondary" />
+<ActionCard>
+	<div
+		tabindex="0"
+		role="button"
+		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
+		on:click={(e) => softRoute(e, '/work/' + work.id)}
+	>
+		<h4 class="segment-title">{work.title}</h4>
+		<div>
+			<div class="segment-container">
+				<div>
+					<p class="segment-element">Hours</p>
+					<p class="segment-element">{work.hours}</p>
+				</div>
+				<div>
+					<p class="segment-element">Due</p>
+					<p class="segment-element">{work.endDate}</p>
+				</div>
+			</div>
+			<p class="segment-element">Skills {work.skills}</p>
+		</div>
+	</div>
+	<div
+		tabindex="0"
+		role="button"
+		on:keydown={(e) => softRoute(e, '/user/' + user.id)}
+		on:click={(e) => softRoute(e, '/user/' + user.id)}
+	>
+		<WideAvatarChip {user}></WideAvatarChip>
+	</div>
 
 	<div slot="footer">
 		<button>Complete</button>
 	</div>
-</Card>
+</ActionCard>

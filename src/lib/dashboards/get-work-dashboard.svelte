@@ -15,9 +15,15 @@
 	</div>
 	<div class="get-work-content" slot="content">
 		<DashboardTile title="Opportunities" redirect="get-work">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{opportunityItems.length} tasks available
+			</p>
 			<OpportunitiesCarousel opportunityItems={opportunityItems.slice(0, 3)} />
 		</DashboardTile>
 		<DashboardTile title="Assigned to You" redirect="get-work">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{assignedToYouItems.length} tasks assigned to you
+			</p>
 			<AssignedToYouCarousel assignedToYouItems={assignedToYouItems.slice(0, 3)} />
 		</DashboardTile>
 	</div>

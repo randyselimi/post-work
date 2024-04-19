@@ -14,9 +14,15 @@
 	</div>
 	<div class="post-work-content" slot="content">
 		<DashboardTile title="Currenty Posted" redirect="post-work">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{currentlyPostedItems.length} tasks unassigned
+			</p>
 			<CurrentlyPostedCarousel {currentlyPostedItems} />
 		</DashboardTile>
 		<DashboardTile title="In-Progress" redirect="post-work">
+			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
+				{inProgressItems.length} tasks being worked on
+			</p>
 			<InProgressCarousel {inProgressItems} />
 		</DashboardTile>
 	</div>
