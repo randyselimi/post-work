@@ -2,12 +2,12 @@
 	$: showModal = false;
 </script>
 
-<button on:click={() => (showModal = true)}> Post Work </button>
+<button on:click={() => (showModal = true)}> Post Task </button>
 
 {#if showModal}
 	<form>
-		<fieldset id="post-work">
-			<legend>Post Work</legend>
+		<fieldset id="post-task">
+			<legend>Post Task</legend>
 			<div class="row">
 				<div class="column">
 					<label for="description">Description</label>

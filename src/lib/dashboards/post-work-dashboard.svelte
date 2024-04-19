@@ -1,16 +1,17 @@
 <script lang="ts">
-	import PostWorkModal from '../modals/post-work-modal.svelte';
+	import Dashboard from './dashboard.svelte';
+	import PostTaskForm from '../modals/post-work-modal.svelte';
+	import DashboardTile from './dashboard-tile.svelte';
 	import CurrentlyPostedCarousel from '../carousel/currently-posted-carousel.svelte';
 	import InProgressCarousel from '../carousel/in-progress-carousel.svelte';
-	import Dashboard from './dashboard.svelte';
-	import DashboardTile from './dashboard-tile.svelte';
 	export let currentlyPostedItems: any;
 	export let inProgressItems: any;
 </script>
 
 <Dashboard title="Post Work" redirect="post-work">
 	<div slot="actions">
-		<PostWorkModal />
+		<PostTaskForm />
+		<button disabled>Post Project</button>
 	</div>
 	<div class="post-work-content" slot="content">
 		<DashboardTile title="Currenty Posted" redirect="post-work">
