@@ -8,15 +8,16 @@
 <div class="dashboard">
 	<div
 		class="dashboard-title"
+		style="margin-top: 1rem"
 		tabindex="0"
 		role="button"
 		on:keydown={() => goto('/' + redirect)}
 		on:click={() => goto('/' + redirect)}
 	>
-		<h2>{title}</h2>
+		<h2 class="dashboard-title">{title}</h2>
 
 		{#if redirect}<span
-				style="padding: .2rem .2rem; font-size: 1.7rem"
+				style="padding: .1rem .1rem; font-size: 1.7rem"
 				class="material-symbols-outlined"
 			>
 				more_vert
@@ -38,9 +39,10 @@
 		height: 100%;
 	}
 	.dashboard-title {
-		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
+		margin-top: 00rem;
+		margin-bottom: 0;
 	}
 	.dashboard-content {
 		border-radius: 0 10px 10px;

@@ -7,11 +7,13 @@
 {#if text}
 	<div class="divider-container">
 		<div class="dash" />
-		<p style="padding: 0 .7rem">{text}</p>
+		<p style="padding: 0 8px">Test</p>
 		<div class="dash" />
 	</div>
 {:else}
-	<div class="dash" />
+	<div class="divider-container">
+		<div class="dash" />
+	</div>
 {/if}
 
 <style>
@@ -19,11 +21,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 80%;
+		width: 100%;
+		height: 1rem;
 	}
 	.dash {
-		border: 1px solid gray;
-		width: 120px;
+		border: 1px solid rgb(0, 0, 0);
+		width: 100%;
 		height: 0px;
 	}
 </style>

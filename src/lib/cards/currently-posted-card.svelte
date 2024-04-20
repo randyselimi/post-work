@@ -12,22 +12,31 @@
 		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
 		on:click={(e) => softRoute(e, '/work/' + work.id)}
 	>
-		<h4 class="segment-title">{work.title}</h4>
+		<h4>{work.title}</h4>
 		<div>
-			<div class="segment-container">
-				<div>
-					<p class="segment-element">Hours</p>
-					<p class="segment-element">{work.hours}</p>
+			<div class="detail-container">
+				<div class="vertical-detail">
+					<p class="vertical-detail-top">Hours</p>
+					<p class="vertical-detail-bottom">{work.hours}</p>
 				</div>
-				<div>
-					<p class="segment-element">Due</p>
-					<p class="segment-element">{work.endDate}</p>
+				<div class="vertical-detail">
+					<p class="vertical-detail-top">Due</p>
+					<p class="vertical-detail-bottom">{work.endDate}</p>
 				</div>
 			</div>
-			<p class="segment-element">Skills {work.skills}</p>
+			<div class="horizontal-detail">
+				<p class="horizontal-detail-right">Skills: {work.skills}</p>
+			</div>
 		</div>
 	</div>
 	<div slot="footer">
 		<button>Pending</button>
 	</div>
 </ActionCard>
+
+<style>
+	.detail-container {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

@@ -4,7 +4,9 @@
 </script>
 
 <Card>
-	<slot />
+	<div class="content">
+		<slot />
+	</div>
 	<MediumDivider text=""></MediumDivider>
 	<div class="footer">
 		<slot name="footer" />
@@ -12,6 +14,9 @@
 </Card>
 
 <style>
+	.content {
+		height: 75%;
+	}
 	.footer {
 		height: 25%;
 		display: flex;

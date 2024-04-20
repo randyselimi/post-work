@@ -8,8 +8,15 @@
 
 <div class="tall-avatar-chip-container">
 	<h4 class="tall-avatar-chip-title">{user.fullName}</h4>
-	<Avatar size={100} email={user.email} />
-	<p class="tall-avatar-chip-element">{user.role}</p>
+	<Avatar size={60} email={user.email} />
+	<div class="tall-avatar-chip-element-container">
+		<svg style="margin: 0 2px;" height=".5rem" width=".5rem">
+			<circle cx="50%" cy="50%" r=".25rem" fill="red" />
+		</svg>
+		<p class="tall-avatar-chip-element">
+			{user.role}
+		</p>
+	</div>
 </div>
 
 <style>
@@ -20,15 +27,20 @@
 	}
 	.tall-avatar-chip-container {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: center;
 		flex-direction: column;
 	}
 	.tall-avatar-chip-element {
-		font-size: 0.7rem;
+		font-size: 0.6rem;
 		margin-top: 0;
 		margin-bottom: 0;
+		margin-left: 2px;
 		text-overflow: clip;
 		overflow: hidden;
+	}
+	.tall-avatar-chip-element-container {
+		display: flex;
+		align-items: baseline;
 	}
 </style>

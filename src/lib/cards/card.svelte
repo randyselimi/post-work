@@ -1,5 +1,4 @@
 <script>
-	import MediumDivider from '$lib/dividers/medium-divider.svelte';
 </script>
 
 <div class="card">
@@ -18,7 +17,7 @@
 		margin: 0.25em;
 		padding: 0.5em;
 		border-radius: 10px;
-		height: 14.5rem;
-		width: 11rem;
+		height: 12rem;
+		width: 9rem;
 	}
 </style>

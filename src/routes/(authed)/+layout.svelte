@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../styles.css';
 	import { page } from '$app/stores';
 	import TeamModal from '$lib/modals/team-modal.svelte';
 	import WorkModal from '$lib/modals/work-modal.svelte';

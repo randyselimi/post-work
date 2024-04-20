@@ -22,7 +22,7 @@
 					more_vert
 				</span>
 			{/if}
-			<h3>{title}</h3>
+			<h3 class="dashboard-tile-title">{title}</h3>
 
 			{#if redirect}<span
 					style="padding: .2rem .2rem; font-size: 1.4rem"
@@ -61,6 +61,8 @@
 	.dashboard-tile-title {
 		display: flex;
 		align-items: center;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	.dashboard-tile-subtitle {
 		text-align: center;

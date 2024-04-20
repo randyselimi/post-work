@@ -13,9 +13,9 @@
 		on:click={(e) => softRoute(e, '/team/' + team.id)}
 	>
 		<h4>{team.name}</h4>
-		<div>
-			<p>Members: {team.members.length}</p>
-			<p>Hours: {team.hours}</p>
+		<div class="vertical-detail">
+			<p class="vertical-detail-top">Members</p>
+			<p class="vertical-detail-bottom">{team.members.length}</p>
 		</div>
 	</div>
 	<div slot="footer">

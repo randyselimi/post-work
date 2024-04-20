@@ -1,7 +1,9 @@
 <script lang="ts">
+	import './card.css';
 	import ActionCard from './action-card.svelte';
 	import { softRoute } from '../SoftRoute';
 	import WideAvatarChip from '$lib/chips/wide-avatar-chip.svelte';
+	import MediumDivider from '$lib/dividers/medium-divider.svelte';
 
 	export let work: any;
 	export let user: any;
@@ -14,21 +16,24 @@
 		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
 		on:click={(e) => softRoute(e, '/work/' + work.id)}
 	>
-		<h4 class="segment-title">{work.title}</h4>
+		<h4>{work.title}</h4>
 		<div>
-			<div class="segment-container">
-				<div>
-					<p class="segment-element">Hours</p>
-					<p class="segment-element">{work.hours}</p>
+			<div class="detail-container">
+				<div class="vertical-detail">
+					<p class="vertical-detail-top">Hours</p>
+					<p class="vertical-detail-bottom">{work.hours}</p>
 				</div>
 				<div>
-					<p class="segment-element">Due</p>
-					<p class="segment-element">{work.endDate}</p>
+					<p class="vertical-detail-top">Due</p>
+					<p class="vertical-detail-bottom">{work.endDate}</p>
 				</div>
 			</div>
-			<p class="segment-element">Skills {work.skills}</p>
+			<div class="horizontal-detail">
+				<p class="horizontal-detail-right">Skills: {work.skills}</p>
+			</div>
 		</div>
 	</div>
+	<MediumDivider text="Doing For"></MediumDivider>
 	<div
 		tabindex="0"
 		role="button"
@@ -42,3 +47,10 @@
 		<button>Complete</button>
 	</div>
 </ActionCard>
+
+<style>
+	.detail-container {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>
