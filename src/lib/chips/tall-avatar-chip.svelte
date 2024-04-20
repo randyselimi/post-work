@@ -1,18 +1,15 @@
 <script lang="ts">
-	import { preloadData, pushState, goto } from '$app/navigation';
 	import Avatar from '$lib/avatar.svelte';
+	import TeamColorChip from './team-color-chip.svelte';
 
 	export let user: any;
-	let showModal = false;
 </script>
 
 <div class="tall-avatar-chip-container">
 	<h4 class="tall-avatar-chip-title">{user.fullName}</h4>
 	<Avatar size={60} email={user.email} />
 	<div class="tall-avatar-chip-element-container">
-		<svg style="margin: 0 2px;" height=".5rem" width=".5rem">
-			<circle cx="50%" cy="50%" r=".25rem" fill="red" />
-		</svg>
+		<TeamColorChip team={user.team} />
 		<p class="tall-avatar-chip-element">
 			{user.role}
 		</p>
@@ -35,7 +32,7 @@
 		font-size: 0.6rem;
 		margin-top: 0;
 		margin-bottom: 0;
-		margin-left: 2px;
+		margin-left: 1px;
 		text-overflow: clip;
 		overflow: hidden;
 	}

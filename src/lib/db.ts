@@ -28,7 +28,8 @@ export function getTeam(teamId: number): Team {
 		id: data.id,
 		name: data.name,
 		members: data.members,
-		connectedTeams: data.connectedTeams
+		connectedTeams: data.connectedTeams,
+		color: data.color
 	};
 	team.members = team.members.map((member) => {
 		const data: UserData = userData.find((data) => data.id === member)!;
@@ -55,7 +56,8 @@ export function getTeams(teamId: number): Team[] {
 		id: data.id,
 		name: data.name,
 		members: data.members,
-		connectedTeams: data.connectedTeams
+		connectedTeams: data.connectedTeams,
+		color: data.color
 	};
 	const teams: Team[] = team.connectedTeams.map((connectedTeam) => {
 		const data: TeamData = teamData.find((data) => data.id === connectedTeam)!;
@@ -63,7 +65,8 @@ export function getTeams(teamId: number): Team[] {
 			id: data.id,
 			name: data.name,
 			members: data.members,
-			connectedTeams: data.connectedTeams
+			connectedTeams: data.connectedTeams,
+			color: data.color
 		};
 		return team;
 	});

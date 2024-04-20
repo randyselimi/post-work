@@ -5,6 +5,7 @@ export interface TeamData {
 	name: string;
 	members: number[];
 	connectedTeams: number[];
+	color: string;
 }
 
 export interface Team {
@@ -12,4 +13,5 @@ export interface Team {
 	name: string;
 	members: User[] | number[];
 	connectedTeams: Team[] | number[];
+	color: string;
 }
