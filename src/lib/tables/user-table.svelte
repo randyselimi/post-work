@@ -11,4 +11,4 @@
 	];
 </script>
 
-<Table {columns} data={users} />
+<Table {columns} data={users} route="user" />

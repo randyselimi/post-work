@@ -20,10 +20,10 @@
 		<p>Team Details</p>
 	</div>
 	<div slot="folder0">
-		<UserTable users={team.members}></UserTable>
+		<UserTable users={team.getMembers()}></UserTable>
 	</div>
 	<div slot="folder1">
-		<TeamTable teams={team.connectedTeams}></TeamTable>
+		<TeamTable teams={team.getConnectedTeams()}></TeamTable>
 	</div>
 	<!-- <div slot="folder2">
 		<p>Skills</p>

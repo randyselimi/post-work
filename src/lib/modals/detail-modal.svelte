@@ -1,9 +1,16 @@
 <script lang="ts">
+	import BackButton from '$lib/buttons/back-button.svelte';
+	import ForwardButton from '$lib/buttons/forward-button.svelte';
 	import Modal from './modal.svelte';
+	import { mainRoute, previousRoutes } from '$lib/db';
+	import { page } from '$app/stores';
+	import { softRoute, softRouteBack, softRouteNext } from '$lib/SoftRoute';
 
 	export let showModal: boolean;
-	export let actions: string[] = [];
 	export let detailOptions: { title: string; position: number }[];
+	$: canGoBack = $previousRoutes && $previousRoutes.previous.length > 0;
+	$: canGoForward =
+		$previousRoutes && $previousRoutes.current && $previousRoutes.current.next !== null;
 	let selectedDetail = 0;
 	let dialog: HTMLDialogElement; // HTMLDialogElement
 
@@ -12,6 +19,13 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <Modal bind:showModal>
+	<div slot="actions">
+		<div style="display: flex;">
+			<BackButton disabled={!canGoBack} on:click={(e) => softRouteBack(e)} />
+			<ForwardButton disabled={!canGoForward} on:click={(e) => softRouteNext(e)} />
+		</div>
+	</div>
+	<h2 slot="header">Detail View</h2>
 	<fieldset class="detail-modal-content">
 		<legend>Detail View</legend>
 		<div class="detail-modal-content-element">

@@ -5,6 +5,12 @@ import { type TeamData, Team } from './Team';
 import { type UserData, User } from './User';
 import { type TaskData, Task } from './Task';
 
+interface ModalRoute {
+	name: string;
+	id: number;
+	next: ModalRoute | null;
+}
+
 export const storedTeams: Writable<TeamData[]> = writable(getTeamData());
 
 export const storedUsers: Writable<UserData[]> = writable(getUserData());
@@ -12,6 +18,17 @@ export const storedUsers: Writable<UserData[]> = writable(getUserData());
 export const storedTasks: Writable<TaskData[]> = writable(getTaskData());
 
 export const loggedUser: Writable<User> = writable();
+
+export const mainRoute: Writable<string> = writable();
+
+export const previousRoutes: Writable<{
+	current: ModalRoute | null;
+	previous: ModalRoute[];
+}> = writable({
+	next: null,
+	current: null,
+	previous: []
+});
 
 export function getTeamData(): TeamData[] {
 	if (!browser) {
@@ -91,7 +108,6 @@ export function assignTask(taskId: number, userId: number): void {
 }
 
 export function updateState(taskId: number, state: string): void {
-	debugger;
 	storedTasks.update((tasks) => {
 		const task = tasks.find((data) => data.id === taskId)!;
 		task.status = state;

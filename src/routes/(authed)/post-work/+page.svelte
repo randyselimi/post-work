@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { loggedUser } from '$lib/db';
+	import { loggedUser, mainRoute } from '$lib/db';
 	import PostWorkList from '$lib/lists/post-work-list.svelte';
+	mainRoute.set('/post-work');
 
 	$: postWorkItems = $loggedUser && $loggedUser.getWorkPosted();
 </script>

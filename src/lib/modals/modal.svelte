@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { replaceState } from '$app/navigation';
+	import { mainRoute } from '$lib/db';
 	export let showModal: boolean;
-	export let actions: string[] = [];
 	let dialog: HTMLDialogElement; // HTMLDialogElement
 
 	$: if (dialog) showModal ? dialog.showModal() : dialog.close();
@@ -10,22 +11,23 @@
 
 <dialog
 	bind:this={dialog}
-	on:close={() => (showModal = false)}
+	on:close={() => {
+		replaceState($mainRoute, {});
+		showModal = false;
+	}}
 	on:click|self={() => dialog.close()}
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div style="height: 100%;" on:click|stopPropagation>
 		<div class="modal">
 			<div class="detail-modal-header">
-				<div>Back Button</div>
-				<div>Detail View</div>
+				<div><slot name="actions" /></div>
+				<div><slot name="header" /></div>
 				<span
 					on:click={() => (showModal = false)}
 					style="color: red; font-size: 1.7rem;"
 					class="material-symbols-outlined"
-				>
-					close
-				</span>
+				/>
 			</div>
 			<slot />
 		</div>
@@ -41,7 +43,7 @@
 	.detail-modal-header {
 		display: flex;
 		justify-content: space-between;
-		align-items: stretch;
+		align-items: center;
 	}
 	dialog {
 		width: 40%;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { softRoute } from '$lib/SoftRoute';
 	import type { Task } from '$lib/Task';
 	import type { User } from '$lib/User';
 	import TallAvatarChip from '$lib/chips/tall-avatar-chip.svelte';
@@ -7,8 +8,8 @@
 
 	export let work: Task;
 	export let showModal = false;
-	const postedBy = work.postedBy as User;
-	const assignedTo = work.assignedTo as User;
+	const postedBy = work.getPostedBy() as User;
+	const assignedTo = work.getAssignedTo() as User;
 	const detailOptions = [
 		{ title: 'Communications', position: 0 },
 		{ title: 'History', position: 1 }
@@ -20,11 +21,11 @@
 	<div slot="content">
 		<h2>{work.title}</h2>
 		<div style="display: flex; flex-direction: row;">
-			<div>
+			<div on:click={(e) => softRoute(e, 'user', postedBy.id)}>
 				<h3>Posted by</h3>
 				<TallAvatarChip user={postedBy} />
 			</div>
-			<div>
+			<div on:click={(e) => softRoute(e, 'user', assignedTo.id)}>
 				<h3>Assigned to</h3>
 				{#if assignedTo !== null}
 					<TallAvatarChip user={assignedTo} />

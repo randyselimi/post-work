@@ -7,7 +7,6 @@
 
 	export let user: any;
 	export let work: any;
-	debugger;
 </script>
 
 <ActionCard>

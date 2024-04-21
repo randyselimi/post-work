@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../styles.css';
 	import * as db from '$lib/db';
-	import { loggedUser } from '$lib/db';
+	import { loggedUser, mainRoute, previousRoutes } from '$lib/db';
 	import { page } from '$app/stores';
 	import TeamModal from '$lib/modals/team-modal.svelte';
 	import WorkModal from '$lib/modals/work-modal.svelte';
@@ -30,6 +30,21 @@
 		debugger;
 		if (browser) return (localStorage.tasks = JSON.stringify(val));
 	});
+	mainRoute.subscribe((val) => {
+		previousRoutes.set({ next: null, current: null, previous: [] });
+		if (browser && val) return (localStorage.mainRoute = JSON.stringify(val));
+	});
+	previousRoutes.subscribe((val) => {
+		debugger;
+		if (browser && val) return (localStorage.previousRoutes = JSON.stringify(val));
+	});
+	$: browser &&
+		localStorage.mainRoute &&
+		localStorage.getItem('mainRoute') !== 'undefined' &&
+		mainRoute.set(JSON.parse(localStorage.mainRoute));
+	$: browser &&
+		localStorage.getItem('previousRoutes') !== 'undefined' &&
+		previousRoutes.set(JSON.parse(localStorage.previousRoutes));
 	$: showModal = $page.state.selected;
 	$: team =
 		browser &&

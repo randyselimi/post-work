@@ -26,10 +26,10 @@
 	</div>
 
 	<div slot="folder0">
-		<WorkTable work={user.workAssigned}></WorkTable>
+		<WorkTable work={user.getWorkAssigned()}></WorkTable>
 	</div>
 	<div slot="folder1">
-		<WorkTable work={user.workPosted}></WorkTable>
+		<WorkTable work={user.getWorkPosted()}></WorkTable>
 	</div>
 	<div slot="folder2">
 		<p>Skills</p>

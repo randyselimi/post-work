@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { loggedUser } from '$lib/db';
+	import { loggedUser, mainRoute } from '$lib/db';
 	import GetWorkList from '$lib/lists/get-work-list.svelte';
+	mainRoute.set('/get-work');
 
 	$: getWorkItems =
 		$loggedUser && $loggedUser.getWorkAssigned().concat($loggedUser.getWorkAvailable());

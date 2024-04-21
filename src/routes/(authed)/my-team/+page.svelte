@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { loggedUser } from '$lib/db';
+	import { loggedUser, mainRoute } from '$lib/db';
 	import MyTeamList from '$lib/lists/my-team-list.svelte';
+	mainRoute.set('/my-team');
 
 	$: team = $loggedUser && $loggedUser.getTeam();
 	$: myTeamUsers = team && team.getMembers();

@@ -10,4 +10,4 @@
 	];
 </script>
 
-<Table {columns} data={teams} />
+<Table {columns} data={teams} route="team" />
