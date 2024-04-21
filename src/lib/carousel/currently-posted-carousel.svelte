@@ -4,8 +4,6 @@
 	export let currentlyPostedItems: any;
 </script>
 
-<Carousel>
-	{#each currentlyPostedItems as item}
-		<CurrentlyPostedCard work={item} />
-	{/each}
+<Carousel items={currentlyPostedItems} let:item={card}>
+	<CurrentlyPostedCard work={card} />
 </Carousel>

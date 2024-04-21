@@ -14,8 +14,19 @@
 	on:click|self={() => dialog.close()}
 >
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div on:click|stopPropagation>
+	<div style="height: 100%;" on:click|stopPropagation>
 		<div class="modal">
+			<div class="detail-modal-header">
+				<div>Back Button</div>
+				<div>Detail View</div>
+				<span
+					on:click={() => (showModal = false)}
+					style="color: red; font-size: 1.7rem;"
+					class="material-symbols-outlined"
+				>
+					close
+				</span>
+			</div>
 			<slot />
 		</div>
 	</div>
@@ -27,9 +38,14 @@
 		flex-direction: column;
 		align-items: stretch;
 	}
+	.detail-modal-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+	}
 	dialog {
-		width: 85rem;
-		height: 45rem;
+		width: 40%;
+		height: 42%;
 
 		border-radius: 0.2em;
 		border: none;

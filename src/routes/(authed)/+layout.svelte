@@ -1,12 +1,51 @@
 <script lang="ts">
 	import '../styles.css';
+	import * as db from '$lib/db';
+	import { loggedUser } from '$lib/db';
 	import { page } from '$app/stores';
 	import TeamModal from '$lib/modals/team-modal.svelte';
 	import WorkModal from '$lib/modals/work-modal.svelte';
 	import UserModal from '$lib/modals/user-modal.svelte';
-	import Avatar from '$lib/avatar.svelte';
+	import { storedTeams, storedUsers, storedTasks } from '$lib/db';
+	import { browser } from '$app/environment';
+	import { get } from 'svelte/store';
+	import TallAvatarChip from '$lib/chips/tall-avatar-chip.svelte';
+	import { goto } from '$app/navigation';
+	import { softRoute } from '$lib/SoftRoute';
 
+	export let data;
+
+	$: browser &&
+		$storedUsers.length &&
+		loggedUser.set(db.getUser(get(storedUsers).find((u) => u.email === data.loggedEmail)!.id));
+	storedTeams.subscribe((val) => {
+		debugger;
+		if (browser) return (localStorage.teams = JSON.stringify(val));
+	});
+	storedUsers.subscribe((val) => {
+		debugger;
+		if (browser) return (localStorage.users = JSON.stringify(val));
+	});
+	storedTasks.subscribe((val) => {
+		debugger;
+		if (browser) return (localStorage.tasks = JSON.stringify(val));
+	});
 	$: showModal = $page.state.selected;
+	$: team =
+		browser &&
+		$page.state.selected &&
+		$page.state.selected.team &&
+		db.getTeam($page.state.selected.team);
+	$: work =
+		browser &&
+		$page.state.selected &&
+		$page.state.selected.work &&
+		db.getTask($page.state.selected.work);
+	$: user =
+		browser &&
+		$page.state.selected &&
+		$page.state.selected.user &&
+		db.getUser($page.state.selected.user);
 </script>
 
 <div class="app-container">
@@ -14,28 +53,34 @@
 	<div class="app-main">
 		<slot />
 	</div>
-	<h1 class="app-profile"><Avatar email={'test'} />Randy Selimi</h1>
+	<div style="display: flex; flex-direction:column;" class="app-profile">
+		{#if $loggedUser}
+			<TallAvatarChip user={$loggedUser} />
+			<button on:click={(e) => softRoute(e, 'user', $loggedUser.id)}>View Profile</button>
+			<button on:click={() => goto('/logout')}>Logout</button>
+		{/if}
+	</div>
 </div>
 {#if $page.state.selected}
-	{#if $page.state.selected.team}
+	{#if $page.state.selected.team && team}
 		<TeamModal
-			team={$page.state.selected.team}
+			{team}
 			{showModal}
 			on:close={() => {
 				history.back();
 			}}
 		/>
-	{:else if $page.state.selected.task}
+	{:else if $page.state.selected.work && work}
 		<WorkModal
-			work={$page.state.selected.task}
+			{work}
 			{showModal}
 			on:close={() => {
 				history.back();
 			}}
 		/>
-	{:else if $page.state.selected.user}
+	{:else if $page.state.selected.user && user}
 		<UserModal
-			user={$page.state.selected.user}
+			{user}
 			{showModal}
 			on:close={() => {
 				history.back();

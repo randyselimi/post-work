@@ -22,6 +22,7 @@
 		<h2>{user.fullName}</h2>
 		<TallAvatarChip {user} />
 		<p>{team.name}</p>
+		<h2>{user.email}</h2>
 	</div>
 
 	<div slot="folder0">

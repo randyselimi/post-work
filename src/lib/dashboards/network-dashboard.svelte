@@ -19,7 +19,7 @@
 				<button>View Team</button>
 				<button disabled>Invite User</button>
 			</div>
-			<UserCarousel users={myTeam.members.slice(0, 5)} />
+			<UserCarousel users={myTeam.getMembers().slice(0, 5)} />
 		</DashboardTile>
 		<DashboardTile title="Connected Teams" redirect="connected-teams">
 			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">

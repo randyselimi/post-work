@@ -1,10 +1,13 @@
 <script lang="ts">
-	import type { User } from '$lib/User.js';
+	import { loggedUser } from '$lib/db';
 	import MyTeamList from '$lib/lists/my-team-list.svelte';
 
-	export let data;
-
-	const myTeamUsers: User[] = data.myTeamUsers;
+	$: team = $loggedUser && $loggedUser.getTeam();
+	$: myTeamUsers = team && team.getMembers();
 </script>
 
-<MyTeamList {myTeamUsers} />
+{#if !$loggedUser}
+	<h1>Loading...</h1>
+{:else}
+	<MyTeamList {myTeamUsers} />
+{/if}

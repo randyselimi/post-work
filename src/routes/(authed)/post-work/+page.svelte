@@ -1,10 +1,12 @@
 <script lang="ts">
-	import type { Task } from '$lib/Task';
+	import { loggedUser } from '$lib/db';
 	import PostWorkList from '$lib/lists/post-work-list.svelte';
 
-	export let data;
-
-	const postWorkItems: Task[] = data.postTasks;
+	$: postWorkItems = $loggedUser && $loggedUser.getWorkPosted();
 </script>
 
-<PostWorkList {postWorkItems} />
+{#if !$loggedUser}
+	<h1>Loading...</h1>
+{:else}
+	<PostWorkList {postWorkItems} />
+{/if}

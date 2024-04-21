@@ -12,17 +12,6 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <Modal bind:showModal>
-	<div class="detail-modal-header">
-		<div>Back Button</div>
-		<div>Detail View</div>
-		<span
-			on:click={() => (showModal = false)}
-			style="color: red; font-size: 1.7rem;"
-			class="material-symbols-outlined"
-		>
-			close
-		</span>
-	</div>
 	<fieldset class="detail-modal-content">
 		<legend>Detail View</legend>
 		<div class="detail-modal-content-element">
@@ -56,11 +45,6 @@
 </Modal>
 
 <style>
-	.detail-modal-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: stretch;
-	}
 	.detail-modal-content {
 		display: flex;
 		align-items: stretch;

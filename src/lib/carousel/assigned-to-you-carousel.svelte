@@ -5,8 +5,6 @@
 	export let assignedToYouItems: Task[];
 </script>
 
-<Carousel>
-	{#each assignedToYouItems as item}
-		<AssignedToYouCard work={item} user={item.postedBy} />
-	{/each}
+<Carousel items={assignedToYouItems} let:item={card}>
+	<AssignedToYouCard work={card} user={card.getPostedBy()} />
 </Carousel>

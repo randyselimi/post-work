@@ -9,8 +9,8 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
-		on:click={(e) => softRoute(e, '/work/' + work.id)}
+		on:keydown={(e) => softRoute(e, 'work', work.id)}
+		on:click={(e) => softRoute(e, 'work', work.id)}
 	>
 		<h4>{work.title}</h4>
 		<div>
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	<div slot="footer">
-		<button>Pending</button>
+		<button disabled>No Action</button>
 	</div>
 </ActionCard>
 

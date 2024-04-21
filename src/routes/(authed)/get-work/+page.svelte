@@ -1,10 +1,13 @@
 <script lang="ts">
-	import type { Task } from '$lib/Task';
+	import { loggedUser } from '$lib/db';
 	import GetWorkList from '$lib/lists/get-work-list.svelte';
 
-	export let data;
-
-	const getWorkItems: Task[] = data.getTasks;
+	$: getWorkItems =
+		$loggedUser && $loggedUser.getWorkAssigned().concat($loggedUser.getWorkAvailable());
 </script>
 
-<GetWorkList {getWorkItems} />
+{#if !$loggedUser}
+	<h1>Loading...</h1>
+{:else}
+	<GetWorkList {getWorkItems} />
+{/if}

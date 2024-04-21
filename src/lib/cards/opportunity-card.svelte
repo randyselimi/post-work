@@ -1,8 +1,10 @@
 <script lang="ts">
+	import * as db from '$lib/db';
 	import { softRoute } from '../SoftRoute';
 	import ActionCard from './action-card.svelte';
 	import WideAvatarChip from '$lib/chips/wide-avatar-chip.svelte';
 	import MediumDivider from '$lib/dividers/medium-divider.svelte';
+	import { loggedUser } from '$lib/db';
 
 	export let work: any;
 	export let user: any;
@@ -12,8 +14,8 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
-		on:click={(e) => softRoute(e, '/work/' + work.id)}
+		on:keydown={(e) => softRoute(e, 'work', work.id)}
+		on:click={(e) => softRoute(e, 'work', work.id)}
 	>
 		<h4>{work.title}</h4>
 		<div>
@@ -36,13 +38,13 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/user/' + user.id)}
-		on:click={(e) => softRoute(e, '/user/' + user.id)}
+		on:keydown={(e) => softRoute(e, 'user', user.id)}
+		on:click={(e) => softRoute(e, 'user', user.id)}
 	>
 		<WideAvatarChip {user}></WideAvatarChip>
 	</div>
 	<div slot="footer">
-		<button>Accept</button>
+		<button on:click={() => db.assignTask(work.id, $loggedUser.id)}>Accept</button>
 	</div>
 </ActionCard>
 

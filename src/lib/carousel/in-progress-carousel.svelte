@@ -4,8 +4,6 @@
 	export let inProgressItems: any;
 </script>
 
-<Carousel>
-	{#each inProgressItems as item}
-		<InProgressCard user={item.assignedTo} work={item} />
-	{/each}
+<Carousel items={inProgressItems} let:item={card}>
+	<InProgressCard user={card.getAssignedTo()} work={card} />
 </Carousel>

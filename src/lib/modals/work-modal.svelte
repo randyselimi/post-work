@@ -14,7 +14,6 @@
 		{ title: 'History', position: 1 }
 	];
 	const actions = ['Edit', 'Delete'];
-	console.log(work);
 </script>
 
 <DetailModal {actions} {detailOptions} bind:showModal>

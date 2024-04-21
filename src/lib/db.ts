@@ -1,264 +1,193 @@
+import { browser } from '$app/environment';
+import { get, writable, type Writable } from 'svelte/store';
 import { teamData, userData, taskData } from './data';
-import type { TeamData, Team } from './Team';
-import type { UserData, User } from './User';
-import type { TaskData, Task } from './Task';
+import { type TeamData, Team } from './Team';
+import { type UserData, User } from './User';
+import { type TaskData, Task } from './Task';
 
-// // lib/db.ts
-// import { Pool } from 'pg';
+export const storedTeams: Writable<TeamData[]> = writable(getTeamData());
 
-// /**
-//  * Create a new connection pool to the database.
-//  */
-// const pool = new Pool({
-// 	database: import.meta.env.POSTGRES_DB || 'postgres',
-// 	user: import.meta.env.POSTGRES_USERNAME || 'postgres',
-// 	host: import.meta.env.POSTGRES_HOST || 'localhost',
-// 	port: Number(import.meta.env.POSTGRES_PORT || 5432)
-// });
+export const storedUsers: Writable<UserData[]> = writable(getUserData());
 
-// /**
-//  * Connect to the PostgreSQL database.
-//  * @returns {Promise<import("pg").Client>} A new client from the connection pool.
-//  */
-// export const connectToDB = async () => await pool.connect();
+export const storedTasks: Writable<TaskData[]> = writable(getTaskData());
+
+export const loggedUser: Writable<User> = writable();
+
+export function getTeamData(): TeamData[] {
+	if (!browser) {
+		return [];
+	}
+
+	let data: TeamData[] =
+		localStorage.getItem('teams') && JSON.parse(localStorage.getItem('teams') as string);
+	if (!data) {
+		localStorage.setItem('teams', JSON.stringify(teamData));
+		data = JSON.parse(localStorage.getItem('teams') as string);
+	}
+	return data;
+}
+
+export function getUserData(): UserData[] {
+	if (!browser) {
+		return [];
+	}
+
+	let data: UserData[] =
+		localStorage.getItem('users') && JSON.parse(localStorage.getItem('users') as string);
+	if (!data) {
+		localStorage.setItem('users', JSON.stringify(userData));
+		data = JSON.parse(localStorage.getItem('users') as string);
+	}
+	return data;
+}
+
+export function getTaskData(): TaskData[] {
+	if (!browser) {
+		return [];
+	}
+
+	let data: TaskData[] =
+		localStorage.getItem('tasks') && JSON.parse(localStorage.getItem('tasks') as string);
+	if (!data) {
+		localStorage.setItem('tasks', JSON.stringify(taskData));
+		data = JSON.parse(localStorage.getItem('tasks') as string);
+	}
+	return data;
+}
+
+export function resetData() {
+	if (browser) {
+		localStorage.clear();
+	}
+	storedTeams.set(teamData);
+	storedUsers.set(userData);
+	storedTasks.set(taskData);
+}
+
+export function postTask(taskData: TaskData): void {
+	storedTasks.update((tasks) => {
+		tasks.push(taskData);
+		return tasks;
+	});
+	storedUsers.update((users) => {
+		const user = users.find((data) => data.id === taskData.postedBy)!;
+		user.workPosted.push(taskData.id);
+		return users;
+	});
+}
+
+export function assignTask(taskId: number, userId: number): void {
+	storedTasks.update((tasks) => {
+		const task = tasks.find((data) => data.id === taskId)!;
+		task.assignedTo = userId;
+		task.status = 'Assigned';
+		return tasks;
+	});
+	storedUsers.update((users) => {
+		const user = users.find((data) => data.id === userId)!;
+		user.workAssigned.push(taskId);
+		return users;
+	});
+}
+
+export function updateState(taskId: number, state: string): void {
+	debugger;
+	storedTasks.update((tasks) => {
+		const task = tasks.find((data) => data.id === taskId)!;
+		task.status = state;
+		return tasks;
+	});
+}
+
+export function updateAvailability(userId: number, availability: object): void {
+	storedUsers.update((users) => {
+		const user = users.find((data) => data.id === userId)!;
+		user.availability = availability;
+		return users;
+	});
+}
 
 export function getTeam(teamId: number): Team {
-	const data: TeamData = teamData.find((data) => data.id === teamId)!;
-	const team: Team = {
-		id: data.id,
-		name: data.name,
-		members: data.members,
-		connectedTeams: data.connectedTeams,
-		color: data.color
-	};
-	team.members = team.members.map((member) => {
-		const data: UserData = userData.find((data) => data.id === member)!;
-		const user: User = {
-			id: data.id,
-			firstName: data.firstName,
-			lastName: data.lastName,
-			fullName: data.fullName,
-			email: data.email,
-			avatarType: data.avatarType,
-			role: data.role,
-			team: data.team,
-			workPosted: data.workPosted,
-			workAssigned: data.workAssigned
-		};
-		return user;
-	}) as User[];
+	const data: TeamData = get(storedTeams).find((data) => data.id === teamId)!;
+	const team = new Team(data);
 	return team;
 }
 
-export function getTeams(teamId: number): Team[] {
-	const data: TeamData = teamData.find((data) => data.id === teamId)!;
-	const team: Team = {
-		id: data.id,
-		name: data.name,
-		members: data.members,
-		connectedTeams: data.connectedTeams,
-		color: data.color
-	};
-	const teams: Team[] = team.connectedTeams.map((connectedTeam) => {
-		const data: TeamData = teamData.find((data) => data.id === connectedTeam)!;
-		const team: Team = {
-			id: data.id,
-			name: data.name,
-			members: data.members,
-			connectedTeams: data.connectedTeams,
-			color: data.color
-		};
-		return team;
+export function getTeams(teamIds: number[]): Team[] {
+	const data: TeamData[] = teamIds.map((teamId) => getTeam(teamId));
+	const teams: Team[] = data.map((data) => {
+		return new Team(data);
 	});
+	// const team: Team = {
+	// 	id: data.id,
+	// 	name: data.name,
+	// 	members: data.members,
+	// 	connectedTeams: data.connectedTeams,
+	// 	color: data.color
+	// };
+	// const teams: Team[] = team.connectedTeams.map((connectedTeam) => {
+	// 	const data: TeamData = teamData.find((data) => data.id === connectedTeam)!;
+	// 	const team: Team = {
+	// 		id: data.id,
+	// 		name: data.name,
+	// 		members: data.members,
+	// 		connectedTeams: data.connectedTeams,
+	// 		color: data.color
+	// 	};
+	// 	return team;
+	// });
 	return teams;
 }
 
 export function getUser(userId: number): User {
-	const data: UserData = userData.find((data) => data.id === userId)!;
-	const user: User = {
-		id: data.id,
-		firstName: data.firstName,
-		lastName: data.lastName,
-		fullName: data.fullName,
-		email: data.email,
-		avatarType: data.avatarType,
-		role: data.role,
-		team: data.team,
-		workPosted: data.workPosted,
-		workAssigned: data.workAssigned
-	};
-
-	user.team = getTeam(user.team as number);
-
-	user.workPosted = user.workPosted.map((postedTask) => {
-		const data: TaskData = taskData.find((data) => data.id === postedTask)!;
-		const task: Task = {
-			id: data.id,
-			title: data.title,
-			description: data.description,
-			skills: data.skills,
-			role: data.role,
-			hours: data.hours,
-			billable: data.billable,
-			billingInfo: data.billingInfo,
-			postedBy: data.postedBy,
-			assignedTo: data.assignedTo,
-			status: data.status,
-			startDate: data.startDate,
-			endDate: data.endDate
-		};
-		return task;
-	}) as Task[];
-	user.workAssigned = user.workAssigned.map((assignedTask) => {
-		const data: TaskData = taskData.find((data) => data.id === assignedTask)!;
-		const task: Task = {
-			id: data.id,
-			title: data.title,
-			description: data.description,
-			skills: data.skills,
-			role: data.role,
-			hours: data.hours,
-			billable: data.billable,
-			billingInfo: data.billingInfo,
-			postedBy: data.postedBy,
-			assignedTo: data.assignedTo,
-			status: data.status,
-			startDate: data.startDate,
-			endDate: data.endDate
-		};
-		return task;
-	}) as Task[];
-	user.workAvailable = taskData
-		.filter((task) => task.status === 'Pending')
-		.map((taskData) => {
-			const data: TaskData = taskData;
-			const task: Task = {
-				id: data.id,
-				title: data.title,
-				description: data.description,
-				skills: data.skills,
-				role: data.role,
-				hours: data.hours,
-				billable: data.billable,
-				billingInfo: data.billingInfo,
-				postedBy: data.postedBy,
-				assignedTo: data.assignedTo,
-				status: data.status,
-				startDate: data.startDate,
-				endDate: data.endDate
-			};
-			return task;
-		}) as Task[];
-	user.workAvailable = user.workAvailable.slice(0, 5);
-	user.workPosted.forEach((task) => {
-		const data: UserData = userData.find((data) => data.id === task.assignedTo)!;
-		if (data) {
-			const user: User = {
-				id: data.id,
-				firstName: data.firstName,
-				lastName: data.lastName,
-				fullName: data.fullName,
-				email: data.email,
-				avatarType: data.avatarType,
-				role: data.role,
-				team: data.team,
-				workPosted: data.workPosted,
-				workAssigned: data.workAssigned
-			};
-			task.assignedTo = user;
-		} else {
-			task.assignedTo = null;
-		}
-	});
-	user.workAssigned.forEach((task) => {
-		const data: UserData = userData.find((data) => data.id === task.postedBy)!;
-		const user: User = {
-			id: data.id,
-			firstName: data.firstName,
-			lastName: data.lastName,
-			fullName: data.fullName,
-			email: data.email,
-			avatarType: data.avatarType,
-			role: data.role,
-			team: data.team,
-			workPosted: data.workPosted,
-			workAssigned: data.workAssigned
-		};
-		task.postedBy = user;
-	});
-	user.workAvailable.forEach((task) => {
-		const data: UserData = userData.find((data) => data.id === task.postedBy)!;
-		const user: User = {
-			id: data.id,
-			firstName: data.firstName,
-			lastName: data.lastName,
-			fullName: data.fullName,
-			email: data.email,
-			avatarType: data.avatarType,
-			role: data.role,
-			team: data.team,
-			workPosted: data.workPosted,
-			workAssigned: data.workAssigned
-		};
-		task.postedBy = user;
-	});
+	const data: UserData = get(storedUsers).find((data) => data.id === userId)!;
+	const user = new User(data);
 
 	return user;
 }
 
+export function getUsers(userIds: number[]): User[] {
+	const data: UserData[] = userIds.map((userId) => getUser(userId));
+	const users: User[] = data.map((data) => {
+		return new User(data);
+	});
+	// const users: User[] = data.map((data) => {
+	// 	const user: User = {
+	// 		id: data.id,
+	// 		firstName: data.firstName,
+	// 		lastName: data.lastName,
+	// 		fullName: data.fullName,
+	// 		email: data.email,
+	// 		avatarType: data.avatarType,
+	// 		role: data.role,
+	// 		team: data.team,
+	// 		workPosted: data.workPosted,
+	// 		workAssigned: data.workAssigned
+	// 	};
+	// 	return user;
+	// });
+	return users;
+}
+
 export function getTask(taskId: number): Task {
-	const data: TaskData = taskData.find((data) => data.id === taskId)!;
-	const task: Task = {
-		id: data.id,
-		title: data.title,
-		description: data.description,
-		skills: data.skills,
-		role: data.role,
-		hours: data.hours,
-		billable: data.billable,
-		billingInfo: data.billingInfo,
-		postedBy: data.postedBy,
-		assignedTo: data.assignedTo,
-		status: data.status,
-		startDate: data.startDate,
-		endDate: data.endDate
-	};
-	const postedByData: UserData = userData.find((data) => data.id === task.postedBy)!;
-	const postedByUser: User = {
-		id: postedByData.id,
-		firstName: postedByData.firstName,
-		lastName: postedByData.lastName,
-		fullName: postedByData.fullName,
-		email: postedByData.email,
-		avatarType: postedByData.avatarType,
-		role: postedByData.role,
-		team: postedByData.team,
-		workPosted: postedByData.workPosted,
-		workAssigned: postedByData.workAssigned
-	};
-	task.postedBy = postedByUser;
-	const assignedToData: UserData = userData.find((data) => data.id === task.assignedTo)!;
-	if (assignedToData) {
-		const assignedToUser: User = {
-			id: assignedToData.id,
-			firstName: assignedToData.firstName,
-			lastName: assignedToData.lastName,
-			fullName: assignedToData.fullName,
-			email: assignedToData.email,
-			avatarType: assignedToData.avatarType,
-			role: assignedToData.role,
-			team: assignedToData.team,
-			workPosted: assignedToData.workPosted,
-			workAssigned: assignedToData.workAssigned
-		};
-		task.assignedTo = assignedToUser;
-	} else {
-		task.assignedTo = null;
-	}
+	const data: TaskData = get(storedTasks).find((data) => data.id === taskId)!;
+	const task: Task = new Task(data);
+
 	return task;
 }
 
-export function getTasks(userId: number): Task[] {
-	const user = getUser(userId);
-	return user.workPosted.concat(user.workAssigned).concat(user.workAvailable!) as Task[];
+export function getTasks(taskIds: number[]): Task[] {
+	const data: TaskData[] = taskIds.map((taskId) => getTask(taskId));
+	const tasks: Task[] = data.map((data) => {
+		return new Task(data);
+	});
+	return tasks;
+}
+
+export function getAvailableTasks(): Task[] {
+	const data: TaskData[] = get(storedTasks).filter((data) => data.status === 'Pending');
+	const tasks: Task[] = data.map((data) => {
+		return new Task(data);
+	});
+	return tasks;
 }

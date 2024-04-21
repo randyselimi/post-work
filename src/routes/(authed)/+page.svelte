@@ -1,35 +1,49 @@
 <script lang="ts">
-	import type { User } from '$lib/User';
+	import * as db from '$lib/db';
+	import { User } from '$lib/User';
 	import type { Task } from '$lib/Task';
-	import type { Team } from '$lib/Team.js';
+	import { Team } from '$lib/Team.js';
 	import GetWorkDashboard from '$lib/dashboards/get-work-dashboard.svelte';
 	import PostWorkDashboard from '$lib/dashboards/post-work-dashboard.svelte';
 	import NetworkDashboard from '$lib/dashboards/network-dashboard.svelte';
+	import { browser } from '$app/environment';
+	import { storedUsers, loggedUser } from '$lib/db';
 
-	export let data;
-
-	const myUser: User = data.myUser;
-	const currentlyPostedItems: Task[] = myUser.workPosted.filter(
-		(task) => (task as Task).status === 'Pending'
-	) as Task[];
-	const inProgressItems: Task[] = myUser.workPosted.filter(
-		(task) => (task as Task).status === 'Assigned'
-	) as Task[];
-	const opportunityItems: Task[] = myUser.workAvailable as Task[];
-	const assignedToYouItems: Task[] = myUser.workAssigned as Task[];
-	const myTeam: Team = data.myTeam;
-	const connectedTeams: Team[] = data.connectedTeams;
+	$: workPosted = storedUsers && $loggedUser && $loggedUser.getWorkPosted();
+	$: currentlyPostedItems = workPosted && workPosted.filter((task) => task.status === 'Pending');
+	$: inProgressItems =
+		workPosted &&
+		workPosted.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
+	$: opportunityItems = $loggedUser && $loggedUser.getWorkAvailable();
+	$: assignedToYouItems = $loggedUser && $loggedUser.getWorkAssigned();
+	$: myTeam = $loggedUser && db.getTeam($loggedUser.team);
+	$: connectedTeams = myTeam && myTeam.getConnectedTeams();
+	// const myUserPosted = myUser.getWorkPosted();
+	// const currentlyPostedItems: Task[] = myUserPosted.filter(
+	// 	(task) => (task as Task).status === 'Pending'
+	// ) as Task[];
+	// const inProgressItems: Task[] = myUserPosted.filter(
+	// 	(task) => (task as Task).status === 'Assigned'
+	// ) as Task[];
+	// const opportunityItems: Task[] = myUser.getWorkAvailable();
+	// const assignedToYouItems: Task[] = myUser.getWorkAssigned();
+	// const myTeam: Team = new Team(JSON.parse(data.myTeam));
+	// const connectedTeams: Team[] = JSON.parse(data.connectedTeams).map((team: any) => new Team(team));
 </script>
 
-<div class="dashboard-container">
-	<div class="dashboard-row">
-		<PostWorkDashboard {currentlyPostedItems} {inProgressItems} />
-		<GetWorkDashboard {opportunityItems} {assignedToYouItems} />
+{#if !$loggedUser || !myTeam || !connectedTeams}
+	<h1>Loading...</h1>
+{:else}
+	<div class="dashboard-container">
+		<div class="dashboard-row">
+			<PostWorkDashboard {currentlyPostedItems} {inProgressItems} />
+			<GetWorkDashboard {opportunityItems} {assignedToYouItems} />
+		</div>
+		<div class="dashboard-row">
+			<NetworkDashboard {myTeam} {connectedTeams} />
+		</div>
 	</div>
-	<div class="dashboard-row">
-		<NetworkDashboard {myTeam} {connectedTeams} />
-	</div>
-</div>
+{/if}
 
 <style>
 	.dashboard-container {

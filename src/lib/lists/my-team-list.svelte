@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Dashboard from '../dashboards/dashboard.svelte';
 	import DashboardTile from '../dashboards/dashboard-tile.svelte';
-	import UpdateHoursModal from '$lib/modals/update-hours-modal.svelte';
 	import UserTable from '$lib/tables/user-table.svelte';
 	export let myTeamUsers: any;
 </script>

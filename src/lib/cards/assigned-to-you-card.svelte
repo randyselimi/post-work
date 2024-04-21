@@ -1,4 +1,5 @@
 <script lang="ts">
+	import * as db from '$lib/db';
 	import './card.css';
 	import ActionCard from './action-card.svelte';
 	import { softRoute } from '../SoftRoute';
@@ -13,8 +14,8 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/work/' + work.id)}
-		on:click={(e) => softRoute(e, '/work/' + work.id)}
+		on:keydown={(e) => softRoute(e, 'work', work.id)}
+		on:click={(e) => softRoute(e, 'work', work.id)}
 	>
 		<h4>{work.title}</h4>
 		<div>
@@ -37,14 +38,20 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/user/' + user.id)}
-		on:click={(e) => softRoute(e, '/user/' + user.id)}
+		on:keydown={(e) => softRoute(e, 'user', user.id)}
+		on:click={(e) => softRoute(e, 'user', user.id)}
 	>
 		<WideAvatarChip {user}></WideAvatarChip>
 	</div>
 
 	<div slot="footer">
-		<button>Complete</button>
+		{#if work.status === 'Assigned'}
+			<button on:click={() => db.updateState(work.id, 'Sign-off')}>Complete</button>
+		{:else if work.status === 'Late'}
+			<button disabled>Contact</button>
+		{:else}
+			<button disabled>No Action</button>
+		{/if}
 	</div>
 </ActionCard>
 

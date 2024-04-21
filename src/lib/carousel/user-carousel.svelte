@@ -4,8 +4,6 @@
 	export let users: any;
 </script>
 
-<Carousel>
-	{#each users as user}
-		<UserCard {user} />
-	{/each}
+<Carousel items={users} let:item={user}>
+	<UserCard {user} />
 </Carousel>

@@ -1,3 +1,4 @@
+import * as db from './db';
 import type { User } from './User';
 
 export interface TaskData {
@@ -17,7 +18,7 @@ export interface TaskData {
 	endDate: string;
 }
 
-export interface Task {
+export class Task {
 	id: number;
 	title: string;
 	description: string;
@@ -26,17 +27,45 @@ export interface Task {
 	hours: number;
 	billable: boolean;
 	billingInfo: object;
-	postedBy: User | number;
-	assignedTo: User | number | null;
-	applicants?: User[] | number[];
+	postedBy: number;
+	assignedTo: number | null;
+	applicants?: number[];
 	status: string;
 	startDate: string;
 	endDate: string;
+
+	constructor(taskData: TaskData) {
+		this.id = taskData.id;
+		this.title = taskData.title;
+		this.description = taskData.description;
+		this.skills = taskData.skills;
+		this.role = taskData.role;
+		this.hours = taskData.hours;
+		this.billable = taskData.billable;
+		this.billingInfo = taskData.billingInfo;
+		this.postedBy = taskData.postedBy;
+		this.assignedTo = taskData.assignedTo;
+		this.applicants = taskData.applicants;
+		this.status = taskData.status;
+		this.startDate = taskData.startDate;
+		this.endDate = taskData.endDate;
+	}
+
+	getPostedBy(): User {
+		return db.getUser(this.postedBy);
+	}
+
+	getAssignedTo(): User | null {
+		if (!this.assignedTo) {
+			return null;
+		}
+		return db.getUser(this.assignedTo);
+	}
 }
 
-export enum TaskStatus {
+export enum TaskState {
 	Invalid,
-	Posted,
+	Searching,
 	Assigned,
 	PendingSignoff,
 	Complete,

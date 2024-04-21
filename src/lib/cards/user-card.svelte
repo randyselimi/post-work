@@ -10,12 +10,12 @@
 	<div
 		tabindex="0"
 		role="button"
-		on:keydown={(e) => softRoute(e, '/user/' + user.id)}
-		on:click={(e) => softRoute(e, '/user/' + user.id)}
+		on:keydown={(e) => softRoute(e, 'user', user.id)}
+		on:click={(e) => softRoute(e, 'user', user.id)}
 	>
 		<TallAvatarChip {user} />
 	</div>
 	<div slot="footer">
-		<button>Pending</button>
+		<button>Contact</button>
 	</div>
 </ActionCard>
