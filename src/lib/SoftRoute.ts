@@ -36,7 +36,6 @@ export async function softRoute(e: Event, name: string, id: number) {
 			routes.next = null;
 		}
 		// Current becomes the new route
-		debugger;
 		return routes;
 	});
 	pushState('/' + name + '/' + id, { selected: results });

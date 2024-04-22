@@ -16,12 +16,7 @@
 	</thead>
 	<tbody>
 		{#each data as row}
-			<tr
-				tabindex="0"
-				role="button"
-				on:keydown={(e) => softRoute(e, route, row.id)}
-				on:click={(e) => softRoute(e, route, row.id)}
-			>
+			<tr tabindex="0" role="button" on:click={(e) => softRoute(e, route, row.id)}>
 				{#each columns as column}
 					<td>{row[column.key]}</td>
 				{/each}

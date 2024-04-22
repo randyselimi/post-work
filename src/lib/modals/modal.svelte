@@ -30,6 +30,7 @@
 				/>
 			</div>
 			<slot />
+			<slot name="footer" />
 		</div>
 	</div>
 </dialog>
@@ -46,9 +47,6 @@
 		align-items: center;
 	}
 	dialog {
-		width: 40%;
-		height: 42%;
-
 		border-radius: 0.2em;
 		border: none;
 		padding: 0;

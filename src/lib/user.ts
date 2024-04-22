@@ -13,7 +13,7 @@ export interface UserData {
 	team: number;
 	workPosted: number[];
 	workAssigned: number[];
-	availability?: object;
+	availability: UserAvailability;
 }
 
 export class User {
@@ -28,7 +28,7 @@ export class User {
 	workPosted: number[];
 	workAssigned: number[];
 	workAvailable: number[];
-	availability: object;
+	availability: UserAvailability;
 
 	constructor(userData: UserData) {
 		this.id = userData.id;
@@ -42,7 +42,7 @@ export class User {
 		this.workPosted = userData.workPosted;
 		this.workAssigned = userData.workAssigned;
 		this.workAvailable = [];
-		this.availability = [];
+		this.availability = userData.availability;
 	}
 	getTeam(): Team {
 		return db.getTeam(this.team);
@@ -56,6 +56,16 @@ export class User {
 	getWorkAvailable(): Task[] {
 		return db.getAvailableTasks();
 	}
+}
+
+export interface UserAvailability {
+	weeks: {
+		week: number;
+		days: {
+			day: number;
+			hours: number;
+		}[];
+	}[];
 }
 
 export enum UserRole {

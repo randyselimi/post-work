@@ -21,7 +21,6 @@
 			workPosted.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
 		opportunityItems = test && $loggedUser && $loggedUser.getWorkAvailable();
 		assignedToYouItems = test && $loggedUser && $loggedUser.getWorkAssigned();
-		debugger;
 	});
 	$: workPosted = test && $loggedUser && $loggedUser.getWorkPosted();
 	$: currentlyPostedItems =

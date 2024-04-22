@@ -11,12 +11,7 @@
 </script>
 
 <ActionCard>
-	<div
-		tabindex="0"
-		role="button"
-		on:keydown={(e) => softRoute(e, 'work', work.id)}
-		on:click={(e) => softRoute(e, 'work', work.id)}
-	>
+	<div tabindex="0" role="button" on:click={(e) => softRoute(e, 'work', work.id)}>
 		<h4>{work.title}</h4>
 		<div>
 			<div class="detail-container">
@@ -35,12 +30,7 @@
 		</div>
 	</div>
 	<MediumDivider text="Posted By"></MediumDivider>
-	<div
-		tabindex="0"
-		role="button"
-		on:keydown={(e) => softRoute(e, 'user', user.id)}
-		on:click={(e) => softRoute(e, 'user', user.id)}
-	>
+	<div tabindex="0" role="button" on:click={(e) => softRoute(e, 'user', user.id)}>
 		<WideAvatarChip {user}></WideAvatarChip>
 	</div>
 	<div slot="footer">

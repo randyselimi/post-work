@@ -2,7 +2,7 @@ import { browser } from '$app/environment';
 import { get, writable, type Writable } from 'svelte/store';
 import { teamData, userData, taskData } from './data';
 import { type TeamData, Team } from './Team';
-import { type UserData, User } from './User';
+import { type UserData, User, type UserAvailability } from './User';
 import { type TaskData, Task } from './Task';
 
 interface ModalRoute {
@@ -115,7 +115,7 @@ export function updateState(taskId: number, state: string): void {
 	});
 }
 
-export function updateAvailability(userId: number, availability: object): void {
+export function updateAvailability(userId: number, availability: UserAvailability): void {
 	storedUsers.update((users) => {
 		const user = users.find((data) => data.id === userId)!;
 		user.availability = availability;

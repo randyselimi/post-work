@@ -4,6 +4,7 @@
 	import DashboardTile from './dashboard-tile.svelte';
 	import UserCarousel from '../carousel/user-carousel.svelte';
 	import TeamCarousel from '../carousel/team-carousel.svelte';
+	import TeamColorChipLarge from '$lib/chips/team-color-chip-large.svelte';
 	export let myTeam: Team;
 	export let connectedTeams: Team[];
 </script>
@@ -11,7 +12,10 @@
 <Dashboard title="Network">
 	<div slot="actions"></div>
 	<div class="network-content" slot="content">
-		<DashboardTile title="My Team" redirect="my-team">
+		<DashboardTile title="" redirect="my-team">
+			<div slot="title">
+				<TeamColorChipLarge team={myTeam.id}></TeamColorChipLarge>{myTeam.name}
+			</div>
 			<p slot="subtext" style="margin-top: 0; margin-bottom: .5rem" class="dashboard-tile-subtitle">
 				{myTeam.members.length} team members
 			</p>

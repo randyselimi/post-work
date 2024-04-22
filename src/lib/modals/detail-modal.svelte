@@ -54,7 +54,9 @@
 			</div>
 		</div>
 	</fieldset>
-
+	<div slot="footer">
+		<slot name="footer"></slot>
+	</div>
 	<!-- svelte-ignore a11y-autofocus -->
 </Modal>
 

@@ -11,10 +11,9 @@
 		style="margin-top: 1rem"
 		tabindex="0"
 		role="button"
-		on:keydown={() => goto('/' + redirect)}
 		on:click={() => goto('/' + redirect)}
 	>
-		<h2 class="dashboard-title">{title}</h2>
+		<h2 class="dashboard-title"><slot name="title"></slot>{title}</h2>
 
 		{#if redirect}<span
 				style="padding: .1rem .1rem; font-size: 1.7rem"

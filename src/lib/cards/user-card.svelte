@@ -7,12 +7,7 @@
 </script>
 
 <ActionCard>
-	<div
-		tabindex="0"
-		role="button"
-		on:keydown={(e) => softRoute(e, 'user', user.id)}
-		on:click={(e) => softRoute(e, 'user', user.id)}
-	>
+	<div tabindex="0" role="button" on:click={(e) => softRoute(e, 'user', user.id)}>
 		<TallAvatarChip {user} />
 	</div>
 	<div slot="footer">

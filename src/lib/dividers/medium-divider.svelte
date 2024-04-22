@@ -7,7 +7,7 @@
 {#if text}
 	<div class="divider-container">
 		<div class="dash" />
-		<p style="padding: 0 8px">Test</p>
+		<p style="padding: 0 8px; font-size: .6rem; white-space: nowrap;">{text}</p>
 		<div class="dash" />
 	</div>
 {:else}

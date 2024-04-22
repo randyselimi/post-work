@@ -12,7 +12,6 @@
 			class="dashboard-tile-title"
 			tabindex="0"
 			role="button"
-			on:keydown={() => goto('/' + redirect)}
 			on:click={() => goto('/' + redirect)}
 		>
 			{#if redirect}<span
@@ -22,7 +21,7 @@
 					more_vert
 				</span>
 			{/if}
-			<h3 class="dashboard-tile-title">{title}</h3>
+			<h3 class="dashboard-tile-title"><slot name="title"></slot>{title}</h3>
 
 			{#if redirect}<span
 					style="padding: .2rem .2rem; font-size: 1.4rem"

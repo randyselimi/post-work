@@ -10,21 +10,16 @@
 </script>
 
 <ActionCard>
-	<div
-		tabindex="0"
-		role="button"
-		on:keydown={(e) => softRoute(e, 'user', user.id)}
-		on:click={(e) => softRoute(e, 'user', user.id)}
-	>
+	<div tabindex="0" role="button" on:click={(e) => softRoute(e, 'user', user.id)}>
 		<TallAvatarChip {user}></TallAvatarChip>
 	</div>
-	<MediumDivider text="Assigned To"></MediumDivider>
-	<div
-		tabindex="0"
-		role="button"
-		on:keydown={(e) => softRoute(e, 'work', work.id)}
-		on:click={(e) => softRoute(e, 'work', work.id)}
-	>
+	{#if work.status === 'Sign-off'}
+		<MediumDivider text="Has completed"></MediumDivider>
+	{:else}
+		<MediumDivider text="Is Working On"></MediumDivider>
+	{/if}
+
+	<div tabindex="0" role="button" on:click={(e) => softRoute(e, 'work', work.id)}>
 		<h4>{work.title}</h4>
 		<p class="segment-element">Hours: {work.hours} Due: 7 days</p>
 	</div>

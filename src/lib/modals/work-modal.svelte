@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { softRoute } from '$lib/SoftRoute';
+	import * as db from '$lib/db';
 	import type { Task } from '$lib/Task';
 	import type { User } from '$lib/User';
 	import TallAvatarChip from '$lib/chips/tall-avatar-chip.svelte';
 	import DetailModal from './detail-modal.svelte';
 	import Modal from './modal.svelte';
-
+	import { loggedUser } from '$lib/db';
 	export let work: Task;
 	export let showModal = false;
 	const postedBy = work.getPostedBy() as User;
@@ -47,6 +48,19 @@
 	</div>
 	<div slot="folder1">
 		<p>History</p>
+	</div>
+	<div slot="footer">
+		{#if work.status === 'Sign-off'}
+			<button on:click={() => db.updateState(work.id, 'Complete')}>Sign Off</button>
+		{:else if work.status === 'Assigned'}
+			<button on:click={() => db.updateState(work.id, 'Sign-off')}>Complete</button>
+		{:else if work.status === 'Pending' && work.postedBy !== $loggedUser.id}
+			<button on:click={() => db.assignTask(work.id, $loggedUser.id)}>Accept</button>
+		{/if}
+		{#if work.postedBy === $loggedUser.id}
+			<button on:click={() => console.log('Delete')}>Delete</button>
+			<button on:click={() => console.log('Cancel')}>Cancel</button>
+		{/if}
 	</div>
 </DetailModal>
 

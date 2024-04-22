@@ -7,9 +7,8 @@
 
 <style>
 	.skill-chip {
-		background-color: #f0f0f0;
 		border-radius: 4px;
-		padding: 2px;
+		padding: 3px;
 		display: inline-block;
 		border: 1px solid black;
 		text-overflow: ellipsis;
@@ -17,5 +16,6 @@
 		white-space: nowrap;
 		max-width: 5rem;
 		font-size: 0.55rem;
+		margin: 0 1px;
 	}
 </style>

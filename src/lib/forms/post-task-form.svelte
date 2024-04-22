@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 	import SkillChipInput from '$lib/chips/skill-chip-input.svelte';
 	import * as db from '$lib/db';
 	import { loggedUser } from '$lib/db';
@@ -7,6 +8,8 @@
 
 	$: showModal = false;
 	$: billable = false;
+	let form;
+	let skills = [];
 	const currentDate = new Date();
 	const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 </script>
@@ -15,6 +18,7 @@
 
 <Modal bind:showModal>
 	<form
+		bind:this={form}
 		method="POST"
 		use:enhance={({ formData }) => {
 			const task = {
@@ -65,7 +69,8 @@
 					</div>
 					<div>
 						<label for="skills">Skills</label>
-						<SkillChipInput></SkillChipInput>
+						<input type="hidden" id="skills" name="skills" bind:value={skills} />
+						<SkillChipInput bind:skills></SkillChipInput>
 					</div>
 				</div>
 				<div class="column">
@@ -126,7 +131,12 @@
 						</fieldset>
 					</div>
 
-					<button type="button">Submit</button>
+					<button
+						type="button"
+						on:click={(e) => {
+							form.requestSubmit();
+						}}>Submit</button
+					>
 				</div>
 			</div>
 		</fieldset>
@@ -140,7 +150,7 @@
 	.form-container {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 	.column {
 		display: flex;
