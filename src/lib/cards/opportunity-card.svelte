@@ -5,6 +5,7 @@
 	import WideAvatarChip from '$lib/chips/wide-avatar-chip.svelte';
 	import MediumDivider from '$lib/dividers/medium-divider.svelte';
 	import { loggedUser } from '$lib/db';
+	import SkillChip from '$lib/chips/skill-chip.svelte';
 
 	export let work: any;
 	export let user: any;
@@ -25,7 +26,11 @@
 				</div>
 			</div>
 			<div class="horizontal-detail">
-				<p class="horizontal-detail-right">Skills: {work.skills}</p>
+				<p class="horizontal-detail-right">
+					Skills: {#each work.skills as skill}
+						<SkillChip {skill} />
+					{/each}
+				</p>
 			</div>
 		</div>
 	</div>

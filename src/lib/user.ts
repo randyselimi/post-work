@@ -11,6 +11,7 @@ export interface UserData {
 	avatarType: string;
 	role: string;
 	team: number;
+	skills: string[];
 	workPosted: number[];
 	workAssigned: number[];
 	availability: UserAvailability;
@@ -25,6 +26,7 @@ export class User {
 	avatarType: string;
 	role: string;
 	team: number;
+	skills: string[];
 	workPosted: number[];
 	workAssigned: number[];
 	workAvailable: number[];
@@ -43,6 +45,7 @@ export class User {
 		this.workAssigned = userData.workAssigned;
 		this.workAvailable = [];
 		this.availability = userData.availability;
+		this.skills = userData.skills;
 	}
 	getTeam(): Team {
 		return db.getTeam(this.team);

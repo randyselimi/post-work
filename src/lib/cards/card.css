@@ -29,4 +29,5 @@ p {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 	overflow: hidden;
+	margin-top: 2px;
 }
