@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import SkillChipInput from '$lib/chips/skill-chip-input.svelte';
 	import * as db from '$lib/db';
 	import { loggedUser } from '$lib/db';
 	import Modal from '$lib/modals/modal.svelte';
@@ -64,7 +65,7 @@
 					</div>
 					<div>
 						<label for="skills">Skills</label>
-						<input id="skills" name="skills" />
+						<SkillChipInput></SkillChipInput>
 					</div>
 				</div>
 				<div class="column">
@@ -125,7 +126,7 @@
 						</fieldset>
 					</div>
 
-					<button>Submit</button>
+					<button type="button">Submit</button>
 				</div>
 			</div>
 		</fieldset>

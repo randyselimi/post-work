@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ActionCard from './action-card.svelte';
 	import { softRoute } from '../SoftRoute';
+	import SkillChip from '$lib/chips/skill-chip.svelte';
 
 	export let work: any;
 </script>
@@ -25,7 +26,11 @@
 				</div>
 			</div>
 			<div class="horizontal-detail">
-				<p class="horizontal-detail-right">Skills: {work.skills}</p>
+				<p class="horizontal-detail-right">
+					Skills: {#each work.skills as skill}
+						<SkillChip {skill} />
+					{/each}
+				</p>
 			</div>
 		</div>
 	</div>

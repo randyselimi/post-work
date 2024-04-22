@@ -19,15 +19,12 @@
 		$storedUsers.length &&
 		loggedUser.set(db.getUser(get(storedUsers).find((u) => u.email === data.loggedEmail)!.id));
 	storedTeams.subscribe((val) => {
-		debugger;
 		if (browser) return (localStorage.teams = JSON.stringify(val));
 	});
 	storedUsers.subscribe((val) => {
-		debugger;
 		if (browser) return (localStorage.users = JSON.stringify(val));
 	});
 	storedTasks.subscribe((val) => {
-		debugger;
 		if (browser) return (localStorage.tasks = JSON.stringify(val));
 	});
 	mainRoute.subscribe((val) => {
@@ -35,7 +32,6 @@
 		if (browser && val) return (localStorage.mainRoute = JSON.stringify(val));
 	});
 	previousRoutes.subscribe((val) => {
-		debugger;
 		if (browser && val) return (localStorage.previousRoutes = JSON.stringify(val));
 	});
 	$: browser &&
