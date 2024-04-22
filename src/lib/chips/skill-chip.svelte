@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let skill: string;
+	export let size = 5;
 </script>
 
 <span class="skill-chip">{skill}</span>
