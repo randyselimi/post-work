@@ -3,6 +3,7 @@
 	import Carousel from './carousel.svelte';
 	import AssignedToYouCard from '../cards/assigned-to-you-card.svelte';
 	export let assignedToYouItems: Task[];
+	console.log(assignedToYouItems);
 </script>
 
 <Carousel items={assignedToYouItems} let:item={card}>

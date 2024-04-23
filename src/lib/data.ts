@@ -6920,11 +6920,11 @@ export const userData = [
 	},
 	{
 		id: 109,
-		firstName: 'Van',
+		firstName: 'Steve',
 		lastName: 'Sotworth',
-		fullName: 'Van Sotworth',
-		role: 'Supervisor',
-		email: 'van.sotworth@astarconsulting.com',
+		fullName: 'Steve Sotworth',
+		role: 'Manager',
+		email: 'steve.sotworth@astarconsulting.com',
 		avatarType: 'male',
 		team: 2,
 		contactMethods: [],
@@ -6998,41 +6998,41 @@ export const userData = [
 			{
 				week: 'Week 16',
 				days: [
-					{ day: 'Monday', hours: 1 },
-					{ day: 'Tuesday', hours: 1 },
-					{ day: 'Wednesday', hours: 4 },
-					{ day: 'Thursday', hours: 1 },
-					{ day: 'Friday', hours: 3 }
+					{ day: 'Monday', hours: 0 },
+					{ day: 'Tuesday', hours: 0 },
+					{ day: 'Wednesday', hours: 0 },
+					{ day: 'Thursday', hours: 0 },
+					{ day: 'Friday', hours: 0 }
 				]
 			},
 			{
 				week: 'Week 17',
 				days: [
-					{ day: 'Monday', hours: 1 },
-					{ day: 'Tuesday', hours: 8 },
-					{ day: 'Wednesday', hours: 8 },
-					{ day: 'Thursday', hours: 1 },
-					{ day: 'Friday', hours: 4 }
+					{ day: 'Monday', hours: 0 },
+					{ day: 'Tuesday', hours: 0 },
+					{ day: 'Wednesday', hours: 0 },
+					{ day: 'Thursday', hours: 0 },
+					{ day: 'Friday', hours: 0 }
 				]
 			},
 			{
 				week: 'Week 18',
 				days: [
-					{ day: 'Monday', hours: 7 },
-					{ day: 'Tuesday', hours: 1 },
-					{ day: 'Wednesday', hours: 2 },
-					{ day: 'Thursday', hours: 2 },
-					{ day: 'Friday', hours: 7 }
+					{ day: 'Monday', hours: 0 },
+					{ day: 'Tuesday', hours: 0 },
+					{ day: 'Wednesday', hours: 0 },
+					{ day: 'Thursday', hours: 0 },
+					{ day: 'Friday', hours: 0 }
 				]
 			},
 			{
 				week: 'Week 19',
 				days: [
-					{ day: 'Monday', hours: 2 },
-					{ day: 'Tuesday', hours: 4 },
+					{ day: 'Monday', hours: 0 },
+					{ day: 'Tuesday', hours: 0 },
 					{ day: 'Wednesday', hours: 0 },
-					{ day: 'Thursday', hours: 3 },
-					{ day: 'Friday', hours: 2 }
+					{ day: 'Thursday', hours: 0 },
+					{ day: 'Friday', hours: 0 }
 				]
 			}
 		],
@@ -8180,7 +8180,7 @@ export const taskData = [
 		id: 45,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -8260,7 +8260,7 @@ export const taskData = [
 		id: 48,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 8,
 		billable: true,
 		billingInfo: {
@@ -8369,7 +8369,7 @@ export const taskData = [
 		id: 52,
 		role: 'Manager',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 12,
 		billable: false,
 		billingInfo: {
@@ -8413,7 +8413,7 @@ export const taskData = [
 		id: 54,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -8493,7 +8493,7 @@ export const taskData = [
 		id: 57,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -8833,7 +8833,7 @@ export const taskData = [
 		id: 70,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: false,
 		billingInfo: {
@@ -8884,7 +8884,7 @@ export const taskData = [
 		id: 72,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 6,
 		billable: true,
 		billingInfo: {
@@ -8942,7 +8942,7 @@ export const taskData = [
 		id: 74,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 16,
 		billable: true,
 		billingInfo: {
@@ -9099,7 +9099,7 @@ export const taskData = [
 		id: 80,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 12,
 		billable: true,
 		billingInfo: {
@@ -9871,7 +9871,7 @@ export const taskData = [
 		id: 110,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -10170,7 +10170,7 @@ export const taskData = [
 		id: 121,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 10,
 		billable: true,
 		billingInfo: {
@@ -10436,7 +10436,7 @@ export const taskData = [
 		id: 131,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -10641,7 +10641,7 @@ export const taskData = [
 		id: 139,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -10692,7 +10692,7 @@ export const taskData = [
 		id: 141,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: false,
 		billingInfo: {
@@ -10912,7 +10912,7 @@ export const taskData = [
 		id: 149,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 12,
 		billable: true,
 		billingInfo: {
@@ -11217,7 +11217,7 @@ export const taskData = [
 		id: 161,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -11239,7 +11239,7 @@ export const taskData = [
 		id: 162,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -11747,7 +11747,7 @@ export const taskData = [
 		id: 181,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: false,
 		billingInfo: {
@@ -11826,7 +11826,7 @@ export const taskData = [
 		id: 184,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -11928,7 +11928,7 @@ export const taskData = [
 		id: 188,
 		role: 'Director',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -12039,7 +12039,7 @@ export const taskData = [
 		id: 192,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 17,
 		billable: true,
 		billingInfo: {
@@ -12862,7 +12862,7 @@ export const taskData = [
 		id: 224,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 10,
 		billable: true,
 		billingInfo: {
@@ -13671,7 +13671,7 @@ export const taskData = [
 		id: 255,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: false,
 		billingInfo: {
@@ -13898,7 +13898,7 @@ export const taskData = [
 		id: 263,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -13997,7 +13997,7 @@ export const taskData = [
 		id: 267,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 18,
 		billable: true,
 		billingInfo: {
@@ -14341,7 +14341,7 @@ export const taskData = [
 		id: 280,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -14363,7 +14363,7 @@ export const taskData = [
 		id: 281,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 16,
 		billable: true,
 		billingInfo: {
@@ -14440,7 +14440,7 @@ export const taskData = [
 		id: 284,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -14491,7 +14491,7 @@ export const taskData = [
 		id: 286,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -14717,7 +14717,7 @@ export const taskData = [
 		id: 294,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 16,
 		billable: true,
 		billingInfo: {
@@ -14998,7 +14998,7 @@ export const taskData = [
 		id: 304,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -15138,7 +15138,7 @@ export const taskData = [
 		id: 309,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: false,
 		billingInfo: {
@@ -15168,7 +15168,7 @@ export const taskData = [
 		id: 310,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -15225,7 +15225,7 @@ export const taskData = [
 		id: 312,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -15429,7 +15429,7 @@ export const taskData = [
 		id: 320,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -15530,7 +15530,7 @@ export const taskData = [
 		id: 324,
 		role: 'Manager',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: true,
 		billingInfo: {
@@ -15713,7 +15713,7 @@ export const taskData = [
 		id: 331,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -15770,7 +15770,7 @@ export const taskData = [
 		id: 333,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 18,
 		billable: true,
 		billingInfo: {
@@ -15814,7 +15814,7 @@ export const taskData = [
 		id: 335,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 17,
 		billable: true,
 		billingInfo: {
@@ -15844,7 +15844,7 @@ export const taskData = [
 		id: 336,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -16626,7 +16626,7 @@ export const taskData = [
 		id: 366,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -16854,7 +16854,7 @@ export const taskData = [
 		id: 375,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -16876,7 +16876,7 @@ export const taskData = [
 		id: 376,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -17013,7 +17013,7 @@ export const taskData = [
 		id: 381,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 19,
 		billable: true,
 		billingInfo: {
@@ -17527,7 +17527,7 @@ export const taskData = [
 		id: 401,
 		role: 'Senior Manager',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 17,
 		billable: true,
 		billingInfo: {
@@ -17556,7 +17556,7 @@ export const taskData = [
 		id: 402,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -17661,7 +17661,7 @@ export const taskData = [
 		id: 406,
 		role: 'Director',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -17790,7 +17790,7 @@ export const taskData = [
 		id: 411,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -18476,7 +18476,7 @@ export const taskData = [
 		id: 436,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 10,
 		billable: true,
 		billingInfo: {
@@ -18692,7 +18692,7 @@ export const taskData = [
 		id: 444,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: false,
 		billingInfo: {
@@ -18911,7 +18911,7 @@ export const taskData = [
 		id: 452,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 6,
 		billable: true,
 		billingInfo: {
@@ -18933,7 +18933,7 @@ export const taskData = [
 		id: 453,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -19212,7 +19212,7 @@ export const taskData = [
 		id: 464,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -19315,7 +19315,7 @@ export const taskData = [
 		id: 468,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -19359,7 +19359,7 @@ export const taskData = [
 		id: 470,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -19460,7 +19460,7 @@ export const taskData = [
 		id: 474,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -19538,7 +19538,7 @@ export const taskData = [
 		id: 477,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -19821,7 +19821,7 @@ export const taskData = [
 		id: 488,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -19851,7 +19851,7 @@ export const taskData = [
 		id: 489,
 		role: 'Manager',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: true,
 		billingInfo: {
@@ -19929,7 +19929,7 @@ export const taskData = [
 		id: 492,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 17,
 		billable: true,
 		billingInfo: {
@@ -20046,7 +20046,7 @@ export const taskData = [
 		id: 496,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 6,
 		billable: true,
 		billingInfo: {
@@ -20748,7 +20748,7 @@ export const taskData = [
 		id: 523,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: false,
 		billingInfo: {
@@ -21314,7 +21314,7 @@ export const taskData = [
 		id: 545,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -21373,7 +21373,7 @@ export const taskData = [
 		id: 547,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -21453,7 +21453,7 @@ export const taskData = [
 		id: 550,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -21524,7 +21524,7 @@ export const taskData = [
 		id: 553,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -21597,7 +21597,7 @@ export const taskData = [
 		id: 556,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: false,
 		billingInfo: {
@@ -21746,7 +21746,7 @@ export const taskData = [
 		id: 562,
 		role: 'Manager',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: false,
 		billingInfo: {
@@ -21826,7 +21826,7 @@ export const taskData = [
 		id: 565,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -21848,7 +21848,7 @@ export const taskData = [
 		id: 566,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 8,
 		billable: true,
 		billingInfo: {
@@ -22060,7 +22060,7 @@ export const taskData = [
 		id: 574,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -22255,7 +22255,7 @@ export const taskData = [
 		id: 581,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -22412,7 +22412,7 @@ export const taskData = [
 		id: 587,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -22492,7 +22492,7 @@ export const taskData = [
 		id: 590,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: true,
 		billingInfo: {
@@ -22629,7 +22629,7 @@ export const taskData = [
 		id: 595,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -23128,7 +23128,7 @@ export const taskData = [
 		id: 613,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -23259,7 +23259,7 @@ export const taskData = [
 		id: 618,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -23339,7 +23339,7 @@ export const taskData = [
 		id: 621,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -23465,7 +23465,7 @@ export const taskData = [
 		id: 626,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -23493,7 +23493,7 @@ export const taskData = [
 		id: 627,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -23549,7 +23549,7 @@ export const taskData = [
 		id: 629,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 9,
 		billable: false,
 		billingInfo: {
@@ -23751,7 +23751,7 @@ export const taskData = [
 		id: 637,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -23801,7 +23801,7 @@ export const taskData = [
 		id: 639,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 8,
 		billable: true,
 		billingInfo: {
@@ -23883,7 +23883,7 @@ export const taskData = [
 		id: 642,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 19,
 		billable: true,
 		billingInfo: {
@@ -23964,7 +23964,7 @@ export const taskData = [
 		id: 645,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -24223,7 +24223,7 @@ export const taskData = [
 		id: 655,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -24381,7 +24381,7 @@ export const taskData = [
 		id: 661,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -24408,7 +24408,7 @@ export const taskData = [
 		id: 662,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -24604,7 +24604,7 @@ export const taskData = [
 		id: 670,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 20,
 		billable: true,
 		billingInfo: {
@@ -24707,7 +24707,7 @@ export const taskData = [
 		id: 674,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -25339,7 +25339,7 @@ export const taskData = [
 		id: 698,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 19,
 		billable: true,
 		billingInfo: {
@@ -26000,7 +26000,7 @@ export const taskData = [
 		id: 723,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -26108,7 +26108,7 @@ export const taskData = [
 		id: 727,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -26242,7 +26242,7 @@ export const taskData = [
 		id: 732,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 12,
 		billable: true,
 		billingInfo: {
@@ -26392,7 +26392,7 @@ export const taskData = [
 		id: 738,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 17,
 		billable: true,
 		billingInfo: {
@@ -26549,7 +26549,7 @@ export const taskData = [
 		id: 744,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -26767,7 +26767,7 @@ export const taskData = [
 		id: 752,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 6,
 		billable: true,
 		billingInfo: {
@@ -27969,7 +27969,7 @@ export const taskData = [
 		id: 798,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 12,
 		billable: true,
 		billingInfo: {
@@ -28299,7 +28299,7 @@ export const taskData = [
 		id: 811,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 19,
 		billable: true,
 		billingInfo: {
@@ -28466,7 +28466,7 @@ export const taskData = [
 		id: 817,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 11,
 		billable: true,
 		billingInfo: {
@@ -28575,7 +28575,7 @@ export const taskData = [
 		id: 821,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: true,
 		billingInfo: {
@@ -28688,7 +28688,7 @@ export const taskData = [
 		id: 825,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 18,
 		billable: true,
 		billingInfo: {
@@ -28739,7 +28739,7 @@ export const taskData = [
 		id: 827,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 19,
 		billable: true,
 		billingInfo: {
@@ -28767,7 +28767,7 @@ export const taskData = [
 		id: 828,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -29216,7 +29216,7 @@ export const taskData = [
 		id: 845,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -29244,7 +29244,7 @@ export const taskData = [
 		id: 846,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: true,
 		billingInfo: {
@@ -29274,7 +29274,7 @@ export const taskData = [
 		id: 847,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -29442,7 +29442,7 @@ export const taskData = [
 		id: 854,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 18,
 		billable: true,
 		billingInfo: {
@@ -29572,7 +29572,7 @@ export const taskData = [
 		id: 859,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -29602,7 +29602,7 @@ export const taskData = [
 		id: 860,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -29709,7 +29709,7 @@ export const taskData = [
 		id: 864,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -30048,7 +30048,7 @@ export const taskData = [
 		id: 877,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 14,
 		billable: true,
 		billingInfo: {
@@ -30106,7 +30106,7 @@ export const taskData = [
 		id: 879,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -30164,7 +30164,7 @@ export const taskData = [
 		id: 881,
 		role: 'Senior Manager',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: true,
 		billingInfo: {
@@ -30186,7 +30186,7 @@ export const taskData = [
 		id: 882,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 4,
 		billable: true,
 		billingInfo: {
@@ -30521,7 +30521,7 @@ export const taskData = [
 		id: 894,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 7,
 		billable: false,
 		billingInfo: {
@@ -30579,7 +30579,7 @@ export const taskData = [
 		id: 896,
 		role: 'Senior Manager',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 10,
 		billable: true,
 		billingInfo: {
@@ -30657,7 +30657,7 @@ export const taskData = [
 		id: 899,
 		role: 'Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 3,
 		billable: false,
 		billingInfo: {
@@ -30832,7 +30832,7 @@ export const taskData = [
 		id: 906,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 15,
 		billable: true,
 		billingInfo: {
@@ -30890,7 +30890,7 @@ export const taskData = [
 		id: 908,
 		role: 'Supervisor',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 1,
 		billable: false,
 		billingInfo: {
@@ -31156,7 +31156,7 @@ export const taskData = [
 		id: 918,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -31799,7 +31799,7 @@ export const taskData = [
 		id: 942,
 		role: 'Manager',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 5,
 		billable: true,
 		billingInfo: {
@@ -32056,7 +32056,7 @@ export const taskData = [
 		id: 951,
 		role: 'Supervisor',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 2,
 		billable: true,
 		billingInfo: {
@@ -32602,7 +32602,7 @@ export const taskData = [
 		id: 971,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 8,
 		billable: true,
 		billingInfo: {
@@ -32971,7 +32971,7 @@ export const taskData = [
 		id: 985,
 		role: 'Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 13,
 		billable: true,
 		billingInfo: {
@@ -33050,7 +33050,7 @@ export const taskData = [
 		id: 988,
 		role: 'Senior Associate',
 		team: 1,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 16,
 		billable: true,
 		billingInfo: {
@@ -33129,7 +33129,7 @@ export const taskData = [
 		id: 991,
 		role: 'Senior Associate',
 		team: 2,
-		status: 'Pending',
+		status: 'Completed',
 		hours: 8,
 		billable: true,
 		billingInfo: {

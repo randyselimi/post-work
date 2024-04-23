@@ -11,10 +11,7 @@
 	export let showModal = false;
 	const postedBy = work.getPostedBy() as User;
 	const assignedTo = work.getAssignedTo() as User;
-	const detailOptions = [
-		{ title: 'Communications', position: 0 },
-		{ title: 'History', position: 1 }
-	];
+	const detailOptions = [{ title: 'Feed', position: 0 }];
 	const actions = ['Edit', 'Delete'];
 </script>
 
@@ -44,10 +41,7 @@
 		<p>{work.description}</p>
 	</div>
 	<div slot="folder0">
-		<p>Communications</p>
-	</div>
-	<div slot="folder1">
-		<p>History</p>
+		<h2>This feature is not enabled in the pre-alpha</h2>
 	</div>
 	<div slot="footer">
 		{#if work.status === 'Sign-off'}

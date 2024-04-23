@@ -135,6 +135,7 @@
 						type="button"
 						on:click={(e) => {
 							form.requestSubmit();
+							showModal = false;
 						}}>Submit</button
 					>
 				</div>

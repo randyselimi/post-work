@@ -20,7 +20,12 @@
 			workPosted &&
 			workPosted.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
 		opportunityItems = test && $loggedUser && $loggedUser.getWorkAvailable();
-		assignedToYouItems = test && $loggedUser && $loggedUser.getWorkAssigned();
+		assignedToYouItems =
+			test &&
+			$loggedUser &&
+			$loggedUser
+				.getWorkAssigned()
+				.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
 	});
 	$: workPosted = test && $loggedUser && $loggedUser.getWorkPosted();
 	$: currentlyPostedItems =
@@ -30,7 +35,12 @@
 		workPosted &&
 		workPosted.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
 	$: opportunityItems = test && $loggedUser && $loggedUser.getWorkAvailable();
-	$: assignedToYouItems = test && $loggedUser && $loggedUser.getWorkAssigned();
+	$: assignedToYouItems =
+		test &&
+		$loggedUser &&
+		$loggedUser
+			.getWorkAssigned()
+			.filter((task) => task.status === 'Assigned' || task.status === 'Sign-off');
 	$: myTeam = $loggedUser && db.getTeam($loggedUser.team);
 	$: connectedTeams = myTeam && myTeam.getConnectedTeams();
 	// const myUserPosted = myUser.getWorkPosted();

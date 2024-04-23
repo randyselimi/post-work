@@ -13,13 +13,14 @@
 			<button>Login</button>
 		</fieldset>
 	</form>
-	<button disabled>Register</button>
-	<button disabled>Forgot Password</button>
+	<button disabled>Register With Code</button>
+	<button disabled>Create New Team</button>
 
 	<h2>Notice:</h2>
 	<p>This is a pre-alpha version of PostWork developed by Randy Selimi.</p>
 	<p>
-		It is important to note various functions of this service have been disabled for this release.
+		It is important to note various functions of this service have been mocked or disabled for this
+		demo.
 	</p>
 	<!-- <p>All content contained within is the sole intellectual property of its creator</p> -->
 </div>

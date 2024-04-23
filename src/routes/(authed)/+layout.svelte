@@ -28,7 +28,7 @@
 		if (browser) return (localStorage.tasks = JSON.stringify(val));
 	});
 	mainRoute.subscribe((val) => {
-		previousRoutes.set({ next: null, current: null, previous: [] });
+		previousRoutes.set({ current: null, previous: [] });
 		if (browser && val) return (localStorage.mainRoute = JSON.stringify(val));
 	});
 	previousRoutes.subscribe((val) => {
@@ -60,7 +60,11 @@
 </script>
 
 <div class="app-container">
-	<h1 class="app-title">PostWork</h1>
+	<div>
+		<h1 class="app-title">Post</h1>
+		<h1 class="app-title">Work</h1>
+	</div>
+
 	<div class="app-main">
 		<slot />
 	</div>
