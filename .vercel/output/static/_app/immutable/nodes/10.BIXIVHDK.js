@@ -1,0 +1,1 @@
+import{s as r,b as a,o as m}from"../chunks/13.D5uV4OiT.js";import{S as i,i as p}from"../chunks/index.DzC80FCd.js";import{g as u}from"../chunks/entry.Dke5LpT8.js";import{m as c}from"../chunks/db.D-woo9e5.js";function f(o,t,s){let n;return a(o,c,e=>s(0,n=e)),m(()=>{u(n)}),[]}class $ extends i{constructor(t){super(),p(this,t,f,null,r,{})}}export{$ as component};
