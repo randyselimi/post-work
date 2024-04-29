@@ -1,9 +1,9 @@
 import { browser } from '$app/environment';
 import { get, writable, type Writable } from 'svelte/store';
-import { teamData, userData, taskData } from './data';
-import { type TeamData, Team } from './Team';
-import { type UserData, User, type UserAvailability } from './User';
-import { type TaskData, Task } from './Task';
+import { teamData, userData, taskData } from '$lib/data';
+import { type TeamData, Team } from '$lib/Team';
+import { type UserData, User, type UserAvailability } from '$lib/User';
+import { type TaskData, Task } from '$lib/Task';
 
 interface ModalRoute {
 	name: string;
