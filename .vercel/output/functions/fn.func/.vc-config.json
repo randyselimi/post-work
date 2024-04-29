@@ -1,6 +1,6 @@
 {
 	"runtime": "nodejs20.x",
-	"handler": "..\\..\\..\\..\\..\\..\\Users\\randy\\OneDrive\\Documents\\post-work\\.svelte-kit\\vercel-tmp\\index.js",
+	"handler": "../../../../../../Users/randy/OneDrive/Documents/post-work/.svelte-kit/vercel-tmp/index.js",
 	"launcherType": "Nodejs",
 	"experimentalResponseStreaming": true,
 	"framework": {
