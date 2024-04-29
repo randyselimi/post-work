@@ -1,12 +1,8 @@
 <script lang="ts">
 	import * as db from '$lib/db';
-	import { User } from '$lib/User';
-	import type { Task } from '$lib/Task';
-	import { Team } from '$lib/Team.js';
 	import GetWorkDashboard from '$lib/dashboards/get-work-dashboard.svelte';
 	import PostWorkDashboard from '$lib/dashboards/post-work-dashboard.svelte';
 	import NetworkDashboard from '$lib/dashboards/network-dashboard.svelte';
-	import { browser } from '$app/environment';
 	import { storedUsers, storedTasks, loggedUser, mainRoute } from '$lib/db';
 
 	mainRoute.set('/');
